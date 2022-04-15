@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{3491770e-a284-4c9a-88cf-49be11dca790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\LoginView">
+      <UniqueIdentifier>{3d3a2204-aa20-42b0-ae7e-2470ab4dfae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\WidgetsStack">
+      <UniqueIdentifier>{6b04c1e0-9949-45aa-9861-f04a8ae712cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\RegisterView">
+      <UniqueIdentifier>{8ce183d0-f4a2-401b-a2af-9b38c8a29be2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\UserProfileView">
+      <UniqueIdentifier>{aaef0923-2bac-49f0-8916-a04aefe499fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\HomeView">
+      <UniqueIdentifier>{7089f585-a421-4e4a-8659-bb42ef17084d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\AdminDashboardView">
+      <UniqueIdentifier>{f12149ef-c4b6-441b-a753-80a34745580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\StatisticsView">
+      <UniqueIdentifier>{a27fb091-850c-4690-8fef-c98ab56b6f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\AdminPrivilageView">
+      <UniqueIdentifier>{0ae514ec-e910-4e9d-b1a7-a95b4699dbfe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="WidgetsStack.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\LoginView\LoginView.cpp">
+      <Filter>Views\LoginView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\WidgetsStack\WidgetsStack.cpp">
+      <Filter>Views\WidgetsStack</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\RegisterView\RegisterView.cpp">
+      <Filter>Views\RegisterView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\UserProfileView\UserProfileView.cpp">
+      <Filter>Views\UserProfileView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\HomeView\HomeView.cpp">
+      <Filter>Views\HomeView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\AdminDashboardView\AdminDashboardView.cpp">
+      <Filter>Views\AdminDashboardView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\StatisticsView\StatisticsView.cpp">
+      <Filter>Views\StatisticsView</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\AdminPrivilageView\AdminPrivilageView.cpp">
+      <Filter>Views\AdminPrivilageView</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Views\LoginView\LoginView.ui">
+      <Filter>Views\LoginView</Filter>
+    </QtUic>
+    <QtUic Include="Views\WidgetsStack\WidgetsStack.ui">
+      <Filter>Views\WidgetsStack</Filter>
+    </QtUic>
+    <QtUic Include="Views\RegisterView\RegisterView.ui">
+      <Filter>Views\RegisterView</Filter>
+    </QtUic>
+    <QtUic Include="Views\UserProfileView\UserProfileView.ui">
+      <Filter>Views\UserProfileView</Filter>
+    </QtUic>
+    <QtUic Include="Views\HomeView\HomeView.ui">
+      <Filter>Views\HomeView</Filter>
+    </QtUic>
+    <QtUic Include="Views\AdminDashboardView\AdminDashboardView.ui">
+      <Filter>Views\AdminDashboardView</Filter>
+    </QtUic>
+    <QtUic Include="Views\StatisticsView\StatisticsView.ui">
+      <Filter>Views\StatisticsView</Filter>
+    </QtUic>
+    <QtUic Include="Views\AdminPrivilageView\AdminPrivilageView.ui">
+      <Filter>Views\AdminPrivilageView</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Views\WidgetsStack\WidgetsStack.h">
+      <Filter>Views\WidgetsStack</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\LoginView\LoginView.h">
+      <Filter>Views\LoginView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\RegisterView\RegisterView.h">
+      <Filter>Views\RegisterView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\UserProfileView\UserProfileView.h">
+      <Filter>Views\UserProfileView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\HomeView\HomeView.h">
+      <Filter>Views\HomeView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\AdminDashboardView\AdminDashboardView.h">
+      <Filter>Views\AdminDashboardView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\AdminPrivilageView\AdminPrivilageView.h">
+      <Filter>Views\AdminPrivilageView</Filter>
+    </QtMoc>
+    <QtMoc Include="Views\StatisticsView\StatisticsView.h">
+      <Filter>Views\StatisticsView</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>
