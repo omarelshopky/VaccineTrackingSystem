@@ -5,17 +5,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
     </Filter>
     <Filter Include="Views">
       <UniqueIdentifier>{3491770e-a284-4c9a-88cf-49be11dca790}</UniqueIdentifier>
@@ -44,11 +36,30 @@
     <Filter Include="Views\AdminPrivilageView">
       <UniqueIdentifier>{0ae514ec-e910-4e9d-b1a7-a95b4699dbfe}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="WidgetsStack.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{69bdc629-a497-456c-8369-697d236b1303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{697e3ae0-79ef-47ec-8f55-a639eee80421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\User">
+      <UniqueIdentifier>{2aa34fc1-e8a4-4544-9d54-7314132bebfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Admin">
+      <UniqueIdentifier>{4ebaa279-2190-44d6-b269-f2150be2c36a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\UserController">
+      <UniqueIdentifier>{f9c0c23c-4555-4a8c-9962-b9ee457b9568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\AdminController">
+      <UniqueIdentifier>{b2d78e01-e0b8-422e-b39c-c7657315b82d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{efda4bf5-f2d4-4298-996f-0261d119e9e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Model">
+      <UniqueIdentifier>{e34a75cb-291e-4685-bc61-16882416a51d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -77,6 +88,21 @@
     </ClCompile>
     <ClCompile Include="Views\AdminPrivilageView\AdminPrivilageView.cpp">
       <Filter>Views\AdminPrivilageView</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\Admin\Admin.cpp">
+      <Filter>Models\Admin</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Model\Model.cpp">
+      <Filter>Core\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\User\User.cpp">
+      <Filter>Models\User</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\AdminController\AdminController.cpp">
+      <Filter>Controllers\AdminController</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\UserController\UserController.cpp">
+      <Filter>Controllers\UserController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,5 +156,27 @@
     <QtMoc Include="Views\StatisticsView\StatisticsView.h">
       <Filter>Views\StatisticsView</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Models\Admin\Admin.h">
+      <Filter>Models\Admin</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Model\Model.h">
+      <Filter>Core\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\User\User.h">
+      <Filter>Models\User</Filter>
+    </ClInclude>
+    <ClInclude Include="Controllers\AdminController\AdminController.h">
+      <Filter>Controllers\AdminController</Filter>
+    </ClInclude>
+    <ClInclude Include="Controllers\UserController\UserController.h">
+      <Filter>Controllers\UserController</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="WidgetsStack.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

@@ -85,7 +85,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="WidgetsStack.qrc" />
     <QtUic Include="Views\AdminDashboardView\AdminDashboardView.ui" />
     <QtUic Include="Views\AdminPrivilageView\AdminPrivilageView.ui" />
     <QtUic Include="Views\HomeView\HomeView.ui" />
@@ -94,6 +93,11 @@
     <QtUic Include="Views\StatisticsView\StatisticsView.ui" />
     <QtUic Include="Views\UserProfileView\UserProfileView.ui" />
     <QtUic Include="Views\WidgetsStack\WidgetsStack.ui" />
+    <ClCompile Include="Controllers\AdminController\AdminController.cpp" />
+    <ClCompile Include="Controllers\UserController\UserController.cpp" />
+    <ClCompile Include="Core\Model\Model.cpp" />
+    <ClCompile Include="Models\Admin\Admin.cpp" />
+    <ClCompile Include="Models\User\User.cpp" />
     <ClCompile Include="Views\AdminDashboardView\AdminDashboardView.cpp" />
     <ClCompile Include="Views\AdminPrivilageView\AdminPrivilageView.cpp" />
     <ClCompile Include="Views\HomeView\HomeView.cpp" />
@@ -119,6 +123,16 @@
     <QtMoc Include="Views\StatisticsView\StatisticsView.h" />
     <QtMoc Include="Views\AdminDashboardView\AdminDashboardView.h" />
     <QtMoc Include="Views\HomeView\HomeView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controllers\AdminController\AdminController.h" />
+    <ClInclude Include="Controllers\UserController\UserController.h" />
+    <ClInclude Include="Core\Model\Model.h" />
+    <ClInclude Include="Models\Admin\Admin.h" />
+    <ClInclude Include="Models\User\User.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="WidgetsStack.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
