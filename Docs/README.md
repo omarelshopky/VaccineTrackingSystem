@@ -9,7 +9,7 @@ Implement an “Egyptian Vaccine Tracking System” in C++. That allows the user
 The program has two type of users:
 
     1) Normal User
-        - Register as new account by providing personal record containing: [DONE]
+        - Register as new account by providing personal record containing: 
           - Full Name
           - National ID [Unique = Shouldn’t accept duplicates]
           - Password
@@ -20,10 +20,10 @@ The program has two type of users:
           - Already vaccinated or applying for vaccination?
           - If vaccinated, received only one or both doses?
           - If not, the user should be added to a waiting list.
-        - Login using the National ID and password [DONE]
-        - Display his own records[DONE]
-        - Edit any of his information[DONE]
-        - Delete his personal records (Account)[DONE]
+        - Login using the National ID and password
+        - Display his own records
+        - Edit any of his information
+        - Delete his personal records (Account)
     
     2) Admin
         - All the above features as every admin is a normal user in the first place
@@ -33,7 +33,7 @@ The program has two type of users:
         - View specific user by his National ID
         - Delete all users
         - Delete specific user by his National ID
-        - Get basic statistics about the registered people like: [DONE]
+        - Get basic statistics about the registered people like: 
           - Percentage of people that has received the first dose
           - Percentage of people that has received both doses
           - Percentage of people that has not received any dose
