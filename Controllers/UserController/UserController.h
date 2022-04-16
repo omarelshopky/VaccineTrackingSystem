@@ -7,9 +7,16 @@ class UserController
 public:
 	UserController();
 
-	void Register(string fullName, string NationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber);
-	void Login(string nationalID, string password);
-	void display();
+	/***	Mohyy	***/ // RegisterView
+	void signup(string fullName, string NationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber);
+	
+
+	/***	Doaa	***/ // AdminDashboardView
+	void login(string nationalID, string password);
+
+
+	/***	Zeyad	***/ // UserProfileView
+	User display();
 	void edit();
 
 
