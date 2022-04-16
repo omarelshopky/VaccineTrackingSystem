@@ -5,21 +5,17 @@
  */
 
 #include "../../Config.h"
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <map>
-#include <vector>
 
 
 class FileHandler
 {
-public:
 	string filePath;
-	vector<string> headers;
-	string primaryKey;
 
 public:
+	string primaryKey;
+	vector<string> headers;
+
+
 	/**
 	 * @brief FileHandler Constructor
 	 * @param string fileName containing the table data
