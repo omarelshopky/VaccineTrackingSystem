@@ -57,7 +57,7 @@
     <Filter Include="Core">
       <UniqueIdentifier>{efda4bf5-f2d4-4298-996f-0261d119e9e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Model">
+    <Filter Include="Core\FileHandler">
       <UniqueIdentifier>{e34a75cb-291e-4685-bc61-16882416a51d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -92,9 +92,6 @@
     <ClCompile Include="Models\Admin\Admin.cpp">
       <Filter>Models\Admin</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Model\Model.cpp">
-      <Filter>Core\Model</Filter>
-    </ClCompile>
     <ClCompile Include="Models\User\User.cpp">
       <Filter>Models\User</Filter>
     </ClCompile>
@@ -103,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="Controllers\UserController\UserController.cpp">
       <Filter>Controllers\UserController</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\FileHandler\FileHandler.cpp">
+      <Filter>Core\FileHandler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,9 +161,6 @@
     <ClInclude Include="Models\Admin\Admin.h">
       <Filter>Models\Admin</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Model\Model.h">
-      <Filter>Core\Model</Filter>
-    </ClInclude>
     <ClInclude Include="Models\User\User.h">
       <Filter>Models\User</Filter>
     </ClInclude>
@@ -172,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="Controllers\UserController\UserController.h">
       <Filter>Controllers\UserController</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\FileHandler\FileHandler.h">
+      <Filter>Core\FileHandler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

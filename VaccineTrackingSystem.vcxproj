@@ -95,7 +95,7 @@
     <QtUic Include="Views\WidgetsStack\WidgetsStack.ui" />
     <ClCompile Include="Controllers\AdminController\AdminController.cpp" />
     <ClCompile Include="Controllers\UserController\UserController.cpp" />
-    <ClCompile Include="Core\Model\Model.cpp" />
+    <ClCompile Include="Core\FileHandler\FileHandler.cpp" />
     <ClCompile Include="Models\Admin\Admin.cpp" />
     <ClCompile Include="Models\User\User.cpp" />
     <ClCompile Include="Views\AdminDashboardView\AdminDashboardView.cpp" />
@@ -127,7 +127,8 @@
   <ItemGroup>
     <ClInclude Include="Controllers\AdminController\AdminController.h" />
     <ClInclude Include="Controllers\UserController\UserController.h" />
-    <ClInclude Include="Core\Model\Model.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Core\FileHandler\FileHandler.h" />
     <ClInclude Include="Models\Admin\Admin.h" />
     <ClInclude Include="Models\User\User.h" />
   </ItemGroup>
