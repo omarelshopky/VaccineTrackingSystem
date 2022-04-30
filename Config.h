@@ -13,6 +13,10 @@ using namespace std;
 
 /***				Enums				***/
 typedef enum { MALE, FEMALE } gender_t;
+int doses[] = { 0, 1, 2 };
+string governments[] = { "Cairo", "Alexandria", "Aswan", "Asyut", "Beheira", "Beni Suef", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", 
+						    "Kafr El Sheik", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea",
+							"Sharqia", "Sohag", "South", "Suez" };
 
 /*****************************************/
 
