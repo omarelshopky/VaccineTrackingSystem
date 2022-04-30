@@ -21,20 +21,19 @@ public:
 	void deleteUser(string nationalID);
 
 
-	/***	Enas	***/ // LoginView
-	vector<float> getStatistics();
-
     /**
 	* @brief gets the statistic about doses
 	* @return map<string, float> -> the dose and its precentage 
 	*/
 	map<int, float> statOfAllDoses();
 
+
 	/**
 	* @brief gets the statistic about genders
 	* @return map<string, float> -> the male and the precentage of its dose
 	*/
-	map<string, float> statOfAllMales();
+	map<string, float> statOfAllGenders();
+
 
 	/**
 	* @brief to get the statistic about governments 
@@ -50,11 +49,13 @@ private:
 	*/
 	float statOfDoses(int numOfDoses);
 
+
 	/**
 	* @brief gets the precentage of the spacific number of males
 	* @return number -> the precentage of males
 	*/
 	float statOfMale();
+
 
 	/**
 	* @brief gets the precentage of the spacific number of governments
@@ -62,6 +63,7 @@ private:
 	* @return number -> the precentage of government
 	*/
 	float statOfGovernment(string government);
+
 
 	/**
 	* @brief gets the number of users in database

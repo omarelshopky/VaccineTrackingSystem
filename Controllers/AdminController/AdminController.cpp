@@ -12,7 +12,7 @@ AdminController::AdminController() {
 map<int, float> AdminController::statOfAllDoses() {
 	map<int, float> info;
 	for (int i = 0; i < 3; i++) {
-		info[doses[i]] = statOfDoses(doses[i]);
+		info[i] = statOfDoses(i);
 	}
 	return info;
 }
@@ -24,11 +24,11 @@ float AdminController::statOfDoses(int numOfDoses) {
 }
 
 
-map<string, float>  AdminController::statOfAllMales() {
+map<string, float>  AdminController::statOfAllGenders() {
 	map<string, float> info;
 	info["Male"] = statOfMale();
 	info["Female"] = (100 - info["Male"]);
-	cout << info["Male"] << info["Female"] << endl;
+	return info;
 }
 
 
