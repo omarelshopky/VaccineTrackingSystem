@@ -6,7 +6,6 @@ WidgetsStack::WidgetsStack(QWidget *parent)
     setupUi(this);
 
     // Add system windows to the Widgets stack
-    this->addWidget(new HomeView);
     this->addWidget(new LoginView);
     this->addWidget(new RegisterView);
     this->addWidget(new UserProfileView);
@@ -15,7 +14,7 @@ WidgetsStack::WidgetsStack(QWidget *parent)
     this->addWidget(new AdminPrivilageView);
 
     // Set the first window when the app startup
-    this->setCurrentIndex(5);
+    this->setCurrentIndex(4);
 }
 
 
