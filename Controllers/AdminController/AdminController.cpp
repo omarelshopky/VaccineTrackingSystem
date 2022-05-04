@@ -9,6 +9,30 @@ AdminController::AdminController() {
 }
 
 
+bool AdminController::login(string nationalID, string password) {
+	bool found = false;
+	Admin admin;
+	vector <Admin> admins = Admin::select();
+	for (int i = 0; i < admins.size(); i++)
+	{
+		if (admins[i].nationalID == nationalID && admins[i].password == password) {
+			found = true;
+		}
+		if (found) {
+
+			return true;
+			break;
+		}
+
+		continue;
+	}
+	if (found == false) {
+
+		return false;
+	}
+}
+
+
 map<int, float> AdminController::statOfAllDoses() {
 	map<int, float> info;
 	for (int i = 0; i < 3; i++) {

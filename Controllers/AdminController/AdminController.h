@@ -9,8 +9,13 @@ class AdminController
 public:
 	AdminController();
 
-	/***	Doaa	***/
-	void login(string nationalID, string password);
+
+	/**
+	 * @brief make login for admin that stored in database
+	 * @param string nationalID of the admin and string password of the admin
+	 * @return bool shows if the login process for admin done successfully or not (true -> login be successfully, false -> login be failed )
+	 */
+	bool login(string nationalID, string password);
 
 
 	/***	Merna	***/ // AdminPrivilageView
