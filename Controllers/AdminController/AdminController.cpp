@@ -2,10 +2,14 @@
 using namespace std;
 
 
+
+
+
 AdminController::AdminController() {
 
 }
 
+<<<<<<< HEAD
 vector<User> AdminController::viewUsers() {
 
 	vector<User> users = User ::select();
@@ -118,3 +122,78 @@ void AdminController::giveAdminPrivilage(string nationalID , string password) {
 } 
 
 
+=======
+
+bool AdminController::login(string nationalID, string password) {
+	bool found = false;
+	Admin admin;
+	vector <Admin> admins = Admin::select();
+	for (int i = 0; i < admins.size(); i++)
+	{
+		if (admins[i].nationalID == nationalID && admins[i].password == password) {
+			found = true;
+		}
+		if (found) {
+
+			return true;
+			break;
+		}
+
+		continue;
+	}
+	if (found == false) {
+
+		return false;
+	}
+}
+
+
+map<int, float> AdminController::statOfAllDoses() {
+	map<int, float> info;
+	for (int i = 0; i < 3; i++) {
+		info[i] = statOfDoses(i);
+	}
+	return info;
+}
+
+
+float AdminController::statOfDoses(int numOfDoses) {
+	vector<User> users = User::select({ { "DosesNumber", "=", (to_string(numOfDoses))} });
+	return ((((float)users.size()) / ((float)numberOfUsers())) * 100);
+}
+
+
+map<string, float>  AdminController::statOfAllGenders() {
+	map<string, float> info;
+	info["Male"] = statOfMale();
+	info["Female"] = (100 - info["Male"]);
+	return info;
+}
+
+
+float AdminController::statOfMale() {
+	vector<User> users = User::select({ {"Gender", "=", "Male"} });
+	return (( ((float)users.size()) /((float) numberOfUsers())) * 100);
+}
+
+
+map<string,float> AdminController::statOfAllGovernment() {
+	map<string, float> info;
+	for (int i = 0; i < 22; i++) {
+		info[governments[i]] = statOfGovernment(governments[i]);
+	}
+	return info;
+}
+
+
+float AdminController::statOfGovernment(string government) {
+	vector<User> users = User::select({ { "Government", "=", government} });
+	return (( (float)users.size() / (float)numberOfUsers()) * 100);
+}
+
+
+int AdminController::numberOfUsers() {
+		return User::select({}).size();
+}
+ 
+>>>>>>> 3534084063bcef43ba08386cd2a04cfcc9fc714f
