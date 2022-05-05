@@ -20,7 +20,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -32,7 +32,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>5.14.2_msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;charts;</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -92,7 +92,6 @@
   <ItemGroup>
     <QtUic Include="Views\AdminDashboardView\AdminDashboardView.ui" />
     <QtUic Include="Views\AdminPrivilageView\AdminPrivilageView.ui" />
-    <QtUic Include="Views\HomeView\HomeView.ui" />
     <QtUic Include="Views\LoginView\LoginView.ui" />
     <QtUic Include="Views\RegisterView\RegisterView.ui" />
     <QtUic Include="Views\StatisticsView\StatisticsView.ui" />
@@ -105,7 +104,6 @@
     <ClCompile Include="Models\User\User.cpp" />
     <ClCompile Include="Views\AdminDashboardView\AdminDashboardView.cpp" />
     <ClCompile Include="Views\AdminPrivilageView\AdminPrivilageView.cpp" />
-    <ClCompile Include="Views\HomeView\HomeView.cpp" />
     <ClCompile Include="Views\LoginView\LoginView.cpp" />
     <ClCompile Include="Views\RegisterView\RegisterView.cpp" />
     <ClCompile Include="Views\StatisticsView\StatisticsView.cpp" />
@@ -127,7 +125,6 @@
     <QtMoc Include="Views\AdminPrivilageView\AdminPrivilageView.h" />
     <QtMoc Include="Views\StatisticsView\StatisticsView.h" />
     <QtMoc Include="Views\AdminDashboardView\AdminDashboardView.h" />
-    <QtMoc Include="Views\HomeView\HomeView.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controllers\AdminController\AdminController.h" />

@@ -7,8 +7,6 @@ class AdminController
 
 
 public:
-	AdminController();
-
 
 	/**
 	 * @brief make login for admin that stored in database
@@ -18,21 +16,17 @@ public:
 	bool login(string nationalID, string password);
 
 
-	/***	Merna	***/ 
-
-
 	/**
 	 * @brief Give Admin Privilege to a normal user
 	 * @param string nationalID  of the user , string password to make him an admin
-   */
-
+    */
 	void giveAdminPrivilage(string nationalID , string password);
 
 
 	/**
      * @brief View all the users that stored in the database
      * @return vector<User> contains the all stored users in the database
-   */
+    */
 	vector<User> viewUsers();
 
 
@@ -57,11 +51,6 @@ public:
 	void deleteUser(string nationalID);
 
 
-<<<<<<< HEAD
-
-	/***	Enas	***/ // LoginView
-	vector<float> getStatistics();
-=======
     /**
 	* @brief gets the statistic about doses
 	* @return map<string, float> -> the dose and its precentage 
@@ -81,7 +70,6 @@ public:
 	* @return map<string, float> -> the govenment and the precentage of dose taken in
 	*/
 	map<string, float> statOfAllGovernment();
->>>>>>> 3534084063bcef43ba08386cd2a04cfcc9fc714f
 
 private:
 	/**

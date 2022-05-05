@@ -2,14 +2,11 @@
 using namespace std;
 
 
-
-
-
-AdminController::AdminController() {
-
+bool AdminController::login(string nationalID, string password) {
+	return Admin::select({ { "NationalID", "=", nationalID }, {"Password", "=", password} }).size();
 }
 
-<<<<<<< HEAD
+
 vector<User> AdminController::viewUsers() {
 
 	vector<User> users = User ::select();
@@ -66,8 +63,6 @@ User AdminController::viewUser(string nationalID) {
 }
 
 
-
-
 void AdminController::deleteUsers() {
 	vector<User> users = User::select();
 	for (int i = 0; i < users.size(); i++) {
@@ -76,8 +71,6 @@ void AdminController::deleteUsers() {
 	}
 
 }
-
-
 
 
 void AdminController::deleteUser(string nationalID) {
@@ -100,8 +93,6 @@ void AdminController::deleteUser(string nationalID) {
 }
 
 
-
-
 void AdminController::giveAdminPrivilage(string nationalID , string password) {
 	bool found = false;
 	vector<User> users = User::select();
@@ -120,32 +111,6 @@ void AdminController::giveAdminPrivilage(string nationalID , string password) {
 		cout << " user  not found , try again " << endl;
 	}
 } 
-
-
-=======
-
-bool AdminController::login(string nationalID, string password) {
-	bool found = false;
-	Admin admin;
-	vector <Admin> admins = Admin::select();
-	for (int i = 0; i < admins.size(); i++)
-	{
-		if (admins[i].nationalID == nationalID && admins[i].password == password) {
-			found = true;
-		}
-		if (found) {
-
-			return true;
-			break;
-		}
-
-		continue;
-	}
-	if (found == false) {
-
-		return false;
-	}
-}
 
 
 map<int, float> AdminController::statOfAllDoses() {
@@ -196,4 +161,3 @@ int AdminController::numberOfUsers() {
 		return User::select({}).size();
 }
  
->>>>>>> 3534084063bcef43ba08386cd2a04cfcc9fc714f

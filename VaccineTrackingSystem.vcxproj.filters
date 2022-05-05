@@ -24,9 +24,6 @@
     <Filter Include="Views\UserProfileView">
       <UniqueIdentifier>{aaef0923-2bac-49f0-8916-a04aefe499fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Views\HomeView">
-      <UniqueIdentifier>{7089f585-a421-4e4a-8659-bb42ef17084d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Views\AdminDashboardView">
       <UniqueIdentifier>{f12149ef-c4b6-441b-a753-80a34745580c}</UniqueIdentifier>
     </Filter>
@@ -77,9 +74,6 @@
     <ClCompile Include="Views\UserProfileView\UserProfileView.cpp">
       <Filter>Views\UserProfileView</Filter>
     </ClCompile>
-    <ClCompile Include="Views\HomeView\HomeView.cpp">
-      <Filter>Views\HomeView</Filter>
-    </ClCompile>
     <ClCompile Include="Views\AdminDashboardView\AdminDashboardView.cpp">
       <Filter>Views\AdminDashboardView</Filter>
     </ClCompile>
@@ -118,9 +112,6 @@
     <QtUic Include="Views\UserProfileView\UserProfileView.ui">
       <Filter>Views\UserProfileView</Filter>
     </QtUic>
-    <QtUic Include="Views\HomeView\HomeView.ui">
-      <Filter>Views\HomeView</Filter>
-    </QtUic>
     <QtUic Include="Views\AdminDashboardView\AdminDashboardView.ui">
       <Filter>Views\AdminDashboardView</Filter>
     </QtUic>
@@ -143,9 +134,6 @@
     </QtMoc>
     <QtMoc Include="Views\UserProfileView\UserProfileView.h">
       <Filter>Views\UserProfileView</Filter>
-    </QtMoc>
-    <QtMoc Include="Views\HomeView\HomeView.h">
-      <Filter>Views\HomeView</Filter>
     </QtMoc>
     <QtMoc Include="Views\AdminDashboardView\AdminDashboardView.h">
       <Filter>Views\AdminDashboardView</Filter>
