@@ -11,8 +11,12 @@ public:
 	void signup(string fullName, string NationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber);
 	
 
-	/***	Doaa	***/ // AdminDashboardView
-	void login(string nationalID, string password);
+	/**
+	 * @brief make login for user that stored in database
+	 * @param string nationalID of the user and string password of the user
+	 * @return bool shows if the login process for user done successfully or not (true -> login be successfully, false -> login be failed )
+	 */
+	bool login(string nationalID, string password);
 
 
 	/***	Zeyad	***/ // UserProfileView

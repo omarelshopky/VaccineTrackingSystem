@@ -9,6 +9,8 @@
 #include <QtWidgets/QApplication>
 #include <Windows.h> // Display the output to the console for debuging purpose
 #include <iostream>
+#include "Controllers/UserController/UserController.h"
+#include "Controllers/AdminController/AdminController.h"
 
 void enableConsole();
 
@@ -18,6 +20,10 @@ int main(int argc, char *argv[])
     enableConsole();
     
     //************* Test Your code here ********************//
+
+
+   
+
 
 
 
