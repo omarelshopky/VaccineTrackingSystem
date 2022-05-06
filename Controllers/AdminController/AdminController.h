@@ -55,50 +55,43 @@ public:
 	* @brief gets the statistic about doses
 	* @return map<string, float> -> the dose and its precentage 
 	*/
-	map<int, float> statOfAllDoses();
+	map<int, int> statOfAllDoses();
 
 
 	/**
 	* @brief gets the statistic about genders
 	* @return map<string, float> -> the male and the precentage of its dose
 	*/
-	map<string, float> statOfAllGenders();
+	map<string, int> statOfAllGenders();
 
 
 	/**
 	* @brief to get the statistic about governments 
 	* @return map<string, float> -> the govenment and the precentage of dose taken in
 	*/
-	map<string, float> statOfAllGovernment();
+	map<string, int> statOfAllGovernment();
+
+
+	/**
+	* @brief Gets the number of all registered users in database
+	* @return int the count of user registered in the system
+	*/
+	int getAllUsersCount();
 
 private:
 	/**
-	* @brief gets the precntage of the spacific number of doses
-	* @param int to select the number of doses
-	* @return number -> the precentage of doses the user took 
+	* @brief Gets the number of users that have taken specific number of doses
+	* @param int numOfDoses user has taken
+	* @return int the number of registered users that have taken this number of doses
 	*/
-	float statOfDoses(int numOfDoses);
+	int statOfDoses(int numOfDoses);
 
 
 	/**
-	* @brief gets the precentage of the spacific number of males
-	* @return number -> the precentage of males
+	* @brief gets the number of users of the spacific government
+	* @param string government to get its registered users
+	* @return int the number of registered users from this government
 	*/
-	float statOfMale();
-
-
-	/**
-	* @brief gets the precentage of the spacific number of governments
-	* @param string to select the government taken in
-	* @return number -> the precentage of government
-	*/
-	float statOfGovernment(string government);
-
-
-	/**
-	* @brief gets the number of users in database
-    * @return integer -> the precentage number of users
-	*/
-	int  numberOfUsers();
+	int statOfGovernment(string government);
 };
 

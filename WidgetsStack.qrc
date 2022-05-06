@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/back-button.png</file>
     <file>Assets/gender-female.png</file>
     <file>Assets/gender-male.png</file>
     <file>Assets/no-doses.png</file>

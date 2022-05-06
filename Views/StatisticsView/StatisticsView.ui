@@ -22,23 +22,73 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1">
     <item>
-     <widget class="QLabel" name="headerLbl">
-      <property name="font">
-       <font>
-        <family>Berlin Sans FB</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Statistics Panel</string>
-      </property>
-      <property name="margin">
-       <number>0</number>
-      </property>
-      <property name="indent">
-       <number>20</number>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="headerHLayout" stretch="0,1,0,0">
+      <item>
+       <widget class="QLabel" name="headerLbl">
+        <property name="font">
+         <font>
+          <family>Berlin Sans FB</family>
+          <pointsize>40</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Statistics Panel</string>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <property name="indent">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="headerSpacer_MH">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="backBtn">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../WidgetsStack.qrc">
+          <normaloff>:/WidgetsStack/Assets/back-button.png</normaloff>:/WidgetsStack/Assets/back-button.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="headerSpacer_RH">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
     <item>
      <spacer name="centralSpacer_M">
@@ -143,7 +193,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-2289</y>
          <width>1164</width>
          <height>3022</height>
         </rect>
@@ -2857,7 +2907,7 @@ background-color: #297EB7;
                        </property>
                        <property name="styleSheet">
                         <string notr="true">QTableWidget {
-alternate-background-color: rgb(255, 0, 4);
+alternate-background-color: rgb(102, 147, 206);
 }
 
 
@@ -2900,7 +2950,7 @@ background-color:#297EB7;
                         <bool>false</bool>
                        </property>
                        <property name="alternatingRowColors">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </property>
                        <property name="selectionMode">
                         <enum>QAbstractItemView::NoSelection</enum>
@@ -3032,12 +3082,12 @@ background-color:#297EB7;
                        </column>
                        <item row="0" column="0">
                         <property name="text">
-                         <string>Cairo</string>
+                         <string/>
                         </property>
                        </item>
                        <item row="1" column="0">
                         <property name="text">
-                         <string>Alex</string>
+                         <string/>
                         </property>
                        </item>
                       </widget>
