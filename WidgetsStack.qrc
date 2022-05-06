@@ -1,4 +1,9 @@
 <RCC>
-    <qresource prefix="WidgetsStack">
-    </qresource>
+  <qresource prefix="WidgetsStack">
+    <file>Assets/gender-female.png</file>
+    <file>Assets/gender-male.png</file>
+    <file>Assets/no-doses.png</file>
+    <file>Assets/one-doses.png</file>
+    <file>Assets/two-doses.png</file>
+  </qresource>
 </RCC>
