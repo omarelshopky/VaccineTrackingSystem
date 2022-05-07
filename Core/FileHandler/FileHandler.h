@@ -10,6 +10,7 @@
 class FileHandler
 {
 	string filePath;
+	vector<map<string, string>> data;
 
 public:
 	string primaryKey;

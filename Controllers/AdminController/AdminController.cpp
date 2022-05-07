@@ -112,38 +112,37 @@ void AdminController::giveAdminPrivilage(string nationalID , string password) {
 
 
 map<int, int> AdminController::statOfAllDoses() {
-	map<int, int> info;
-	for (int i = 0; i < 3; i++) {
-		info[i] = statOfDoses(i);
+	map<int, int> info = {{ 0, 0 }, {1, 0}, {2, 0}};
+	
+	for (auto user : User::select()) {
+		info[user.dosesNumber]++;
 	}
+	
 	return info;
-}
-
-
-int AdminController::statOfDoses(int numOfDoses) {
-	return User::select({ { "DosesNumber", "=", (to_string(numOfDoses))} }).size();
 }
 
 
 map<string, int>  AdminController::statOfAllGenders() {
-	map<string, int> info;
-	info["male"] = User::select({ {"Gender", "=", "Male"} }).size();
-	info["female"] = getAllUsersCount() - info["male"];
-	return info;
-}
+	map<string, int> info = { {"Male", 0}, {"Female", 0} };
 
-
-map<string,int> AdminController::statOfAllGovernment() {
-	map<string, int> info;
-	for (int i = 0; i < 22; i++) {
-		info[governments[i]] = statOfGovernment(governments[i]);
+	for (auto user : User::select()) {
+		info[user.gender]++;
 	}
+
 	return info;
 }
 
 
-int AdminController::statOfGovernment(string government) {
-	return User::select({ { "Government", "=", government} }).size();
+map<string,int> AdminController::statOfAllGovernments() {
+	map<string, int> info;
+
+	for (int i = 0; i < 22; i++) info[governments[i]] = 0; // Initialize govs with 0
+
+	for (auto user : User::select()) {
+		info[user.government]++;
+	}
+
+	return info;
 }
 
 

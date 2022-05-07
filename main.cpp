@@ -12,7 +12,6 @@
 #include "Controllers/UserController/UserController.h"
 #include "Controllers/AdminController/AdminController.h"
 
-#include "DataGenerator.h"
 
 void enableConsole();
 
@@ -22,12 +21,7 @@ int main(int argc, char *argv[])
     enableConsole();
     
     //************* Test Your code here ********************//
-    int cnt = 0;
-    for (int i = 0; i < 13050; i++) {
-        if (DataGenerator::generateUser())
-            cout << "\r" << ++cnt;
-    }
-
+    
 
 
     //******************************************************//

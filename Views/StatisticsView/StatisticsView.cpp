@@ -34,10 +34,10 @@ void StatisticsView::updateUiData() {
 
 	// Set Gender data
 	map<std::string, int> genderStat = adminController.statOfAllGenders();
-	float malePercentage = 100 * ((float)genderStat["male"] / (float)allUsersCount);
+	float malePercentage = 100 * ((float)genderStat["Male"] / (float)allUsersCount);
 
-	genderMaleCountLbl->setText(arrangeNumber(genderStat["male"]));
-	genderFemaleCountLbl->setText(arrangeNumber(genderStat["female"]));
+	genderMaleCountLbl->setText(arrangeNumber(genderStat["Male"]));
+	genderFemaleCountLbl->setText(arrangeNumber(genderStat["Female"]));
 
 	genderMalePercentLbl->setText(QString("%1%").arg(malePercentage, 0, 'f', 1));
 	genderFemalePercentLbl->setText(QString("%1%").arg(100.0-malePercentage, 0, 'f', 1));
@@ -45,7 +45,7 @@ void StatisticsView::updateUiData() {
 	genderPercentBar->setValue(malePercentage);
 
 	// Set Area data
-	map<std::string, int> areaStat = adminController.statOfAllGovernment();
+	map<std::string, int> areaStat = adminController.statOfAllGovernments();
 	int abroadCount = allUsersCount;
 
 	// Set area table

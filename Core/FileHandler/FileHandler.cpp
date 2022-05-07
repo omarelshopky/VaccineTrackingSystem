@@ -4,17 +4,9 @@
 FileHandler::FileHandler(string fileName, vector<string> headers, string primaryKey) : 
 	filePath(DATA_DIR_PATH + fileName + FILE_EXTENSION),headers(headers), primaryKey(primaryKey) {
 
-    ifstream file;
+    data = readData();
 
-    file.open(filePath);
-
-    // Check if there is already a file for this table
-    if (file) { 
-        file.close();
-    }
-    else {
-        initDB();
-    }
+    if (data.size() == 0) initDB();
 }
 
 
@@ -55,6 +47,7 @@ bool FileHandler::insert(map<string, string> data) {
 
         // Append the record to the file
         this->appendLine(record);
+        this->data.push_back(data);
 
         return true;
     }
@@ -85,6 +78,9 @@ vector<map<string, string>> FileHandler::readData() {
 
     file.open(this->filePath);
 
+    // Return empty vector when there is no file for this table
+    if (!file) return {}; 
+
     getline(file, recordLine); // Ignore headers line
 
     while (file) {
@@ -102,30 +98,30 @@ vector<map<string, string>> FileHandler::readData() {
         records.push_back(record);
     }
     records.pop_back(); // Remove the last empty line
+    file.close();
 
     return records;
 }
 
 
 vector<map<string, string>> FileHandler::select(vector<condition> conditions = {}) {
-    vector<map<string, string>> allRecords = this->readData();
     vector<map<string, string>> retrivedRecords;
-
+    
     if (conditions.size() == 0) // Select * (all) records
-        return allRecords;
+        return data;
 
-    for (int i = 0; i < allRecords.size(); i++) {
+    for (int i = 0; i < data.size(); i++) {
         bool valid = true;
 
         for (int j = 0; j < conditions.size(); j++) {
-            if (!this->checkCondition(allRecords[i], conditions[j])) {
+            if (!this->checkCondition(data[i], conditions[j])) {
                 valid = false;
                 break;
             }
         }
 
         if (valid) {
-            retrivedRecords.push_back(allRecords[i]);
+            retrivedRecords.push_back(data[i]);
         }
     }
 
@@ -140,14 +136,13 @@ bool FileHandler::isUnique(string value) {
 
 int FileHandler::update(map<string, string> data, vector<condition> conditions) {
     int affectedRecords = 0;
-    vector<map<string, string>> records = this->readData();
 
-    for (int i = 0; i < records.size(); i++) {
+    for (int i = 0; i < this->data.size(); i++) {
         bool valid = true;
 
         // Evaluate all conditions
         for (int j = 0; j < conditions.size(); j++) {
-            if (!this->checkCondition(records[i], conditions[j])) {
+            if (!this->checkCondition(this->data[i], conditions[j])) {
                 valid = false;
                 break;
             }
@@ -157,7 +152,7 @@ int FileHandler::update(map<string, string> data, vector<condition> conditions) 
         if (valid) {
             for (map<string, string>::iterator it = data.begin(); it != data.end(); ++it) {
                 if (it->first != this->primaryKey || (it->first == this->primaryKey && this->isUnique(it->second))) {
-                    records[i][it->first] = it->second;
+                    this->data[i][it->first] = it->second;
                 } 
             }
 
@@ -165,7 +160,7 @@ int FileHandler::update(map<string, string> data, vector<condition> conditions) 
         }
     }
     
-    this->saveData(records);
+    this->saveData(this->data);
 
     return affectedRecords;
 }
@@ -225,7 +220,7 @@ bool FileHandler::checkCondition(map<string, string> record, condition condition
 
 int FileHandler::remove(vector<condition> conditions) {
     int affectedRecords = 0;
-    vector<map<string, string>> records = this->readData();
+    vector<map<string, string>> records(data);
     vector<map<string, string>> remainRecords;
 
     for (int i = 0; i < records.size(); i++) {
@@ -248,6 +243,7 @@ int FileHandler::remove(vector<condition> conditions) {
         }
     }
 
+    data = remainRecords;
     this->saveData(remainRecords);
 
     return affectedRecords;

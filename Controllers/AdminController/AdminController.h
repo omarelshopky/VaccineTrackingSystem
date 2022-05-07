@@ -69,7 +69,7 @@ public:
 	* @brief to get the statistic about governments 
 	* @return map<string, float> -> the govenment and the precentage of dose taken in
 	*/
-	map<string, int> statOfAllGovernment();
+	map<string, int> statOfAllGovernments();
 
 
 	/**
@@ -77,21 +77,5 @@ public:
 	* @return int the count of user registered in the system
 	*/
 	int getAllUsersCount();
-
-private:
-	/**
-	* @brief Gets the number of users that have taken specific number of doses
-	* @param int numOfDoses user has taken
-	* @return int the number of registered users that have taken this number of doses
-	*/
-	int statOfDoses(int numOfDoses);
-
-
-	/**
-	* @brief gets the number of users of the spacific government
-	* @param string government to get its registered users
-	* @return int the number of registered users from this government
-	*/
-	int statOfGovernment(string government);
 };
 
