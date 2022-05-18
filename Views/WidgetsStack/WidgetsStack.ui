@@ -110,6 +110,10 @@
   <property name="windowTitle">
    <string>Vaccine Tracking System</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../WidgetsStack.qrc">
+    <normaloff>:/WidgetsStack/Assets/app-icon.png</normaloff>:/WidgetsStack/Assets/app-icon.png</iconset>
+  </property>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

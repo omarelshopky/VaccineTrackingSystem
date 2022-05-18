@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/app-icon.png</file>
     <file>Assets/back-button.png</file>
     <file>Assets/arrow-down.png</file>
     <file>Assets/arrow-up.png</file>
