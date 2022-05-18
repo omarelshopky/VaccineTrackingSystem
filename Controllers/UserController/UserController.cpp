@@ -1,30 +1,45 @@
 #include "UserController.h"
 
+
 bool UserController::checkFullname(string fullName)
 {
-	bool isLetter = true;
+	bool isValid = true;
+	int words = 0;
 
-	for (int i = 0; i < fullName.length(); i++) {
-		if (tolower(fullName[i]) >= 'a' && tolower(fullName[i]) <= 'z')
-		{
-			isLetter = true;
-		}
-		else
-		{
-			isLetter = false;
-			break;
+	// Split string into words
+	string attribute;
+	vector<string> attributes;
+	stringstream stream(fullName);
+
+	// Loop over the string to get all its parts
+	while (getline(stream, attribute, ' ')) {
+		if (attribute != "") words++;
+
+		for (int i = 0; i < attribute.length(); i++) {
+			if (tolower(attribute[i]) >= 'a' && tolower(attribute[i]) <= 'z')
+			{
+				isValid = true;
+			}
+			else
+			{
+				isValid = false;
+				break;
+			}
 		}
 	}
-	return isLetter;
-}
 
+	// User doesn't entered First and Last name at lest
+	if (words < 2) isValid = false;
+
+	return isValid;
+}
 
 
 bool UserController::cheakNationalID(string nationalID)
 {
 	bool isCorect = true;
 
-	if (nationalID.length() != 13)
+	if (nationalID.length() != 14)
 	{
 		isCorect = false;
 	}
@@ -35,7 +50,6 @@ bool UserController::cheakNationalID(string nationalID)
 			if (nationalID[i] >= '0' && nationalID[i] <= '9')
 			{
 				isCorect = true;
-
 			}
 			else
 			{
@@ -46,6 +60,7 @@ bool UserController::cheakNationalID(string nationalID)
 	}
 	return isCorect;
 }
+
 
 bool UserController::checkPassword(string password)
 {
@@ -62,40 +77,31 @@ bool UserController::checkPassword(string password)
 }
 
 
-
-
-map<string, string> UserController::signup(string fullName, string NationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber)
+map<string, string> UserController::signup(string fullName, string nationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber)
 {
-	User userReg;
-
 	map<string, string> regProblem;
-
 	bool vaildData = true;						// vailData boolean to insert or Not 
 
 	if (checkFullname(fullName))
 	{
 		regProblem["fullName"] = "";
-
 	}
 	else
 	{
-		regProblem["fullName"] = "please enter valid full name";
+		regProblem["fullName"] = "Please Enter Valid Name!";
 		vaildData = false;
 	}
 
 
-
-	if (cheakNationalID(NationalID))
+	if (cheakNationalID(nationalID))
 	{
-		regProblem["NationalID"] = "";
+		regProblem["nationalID"] = "";
 	}
 	else
 	{
-		regProblem["NationalID"] = "please enter valid national ID";
+		regProblem["nationalID"] = "Please Enter Valid 14 digits National ID!";
 		vaildData = false;
 	}
-
-
 
 	if (checkPassword(password))
 	{
@@ -103,31 +109,23 @@ map<string, string> UserController::signup(string fullName, string NationalID, s
 	}
 	else
 	{
-		regProblem["password"] = "please enter valid password, 8-20 digits ";
+		regProblem["password"] = "Please Enter Valid Password, 8-20 Digits!";
 		vaildData = false;
 	}
 
-	userReg.gender = gender;
-	userReg.age = age;
-	userReg.country = country;
-	userReg.isVaccinated = isVaccinated;
-
-	if (isVaccinated == false)
-		userReg.dosesNumber = 0;
-	else
-		userReg.dosesNumber = dosesNumber;
-
 	if (vaildData)
 	{
-		if (userReg.insert())
-			regProblem["duplicateNationalID"] = "";
-		else
-			regProblem["duplicateNationalID"] = "You've entered duplicate national ID";
+		User user(fullName, nationalID, password, gender, age, country, government, isVaccinated, dosesNumber);
 
+		if (user.insert())
+			regProblem["nationalID"] = "";
+		else
+			regProblem["nationalID"] = "You've entered duplicate national ID";
 	}
 
 	return regProblem;
 }
+
 
 bool UserController::login(string nationalID, string password) {
 	return User::select({ { "NationalID", "=", nationalID }, {"Password", "=", password} }).size();

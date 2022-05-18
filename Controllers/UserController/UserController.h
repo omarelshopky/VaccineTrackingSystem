@@ -11,7 +11,7 @@ public:
 		* @return map to display problems of registration
 
 		*/
-	map<string, string> signup(string fullName, string NationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber);
+	map<string, string> signup(string fullName, string nationalID, string password, string gender, int age, string country, string government, bool isVaccinated, int dosesNumber);
 
 
 	/**
