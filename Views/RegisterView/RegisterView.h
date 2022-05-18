@@ -21,4 +21,7 @@ private:
 	void toggleIsVaccinatedCheck();
 	bool handleErrors(map<string, string> state);
 	void goToLogin();
+	void clearView();
+	void handleAbroad(QString country);
+	void initGovComboBox();
 };

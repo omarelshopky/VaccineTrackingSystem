@@ -8,15 +8,16 @@ RegisterView::RegisterView(QStackedWidget* widgetsStack, QWidget *parent)
 	this->widgetsStack = widgetsStack;
 
 	setupUi(this);
-	fullNameError->hide();
-	nationalIdError->hide();
-	passwordError->hide();
+
+	// Initialize components prop
 	nationalIdInput->setValidator(new QDoubleValidator(0, 100, 2, this)); //nationalId accept only numbers
-	
+	this->clearView();
+
 	// Attach signals function
 	connect(registerBtn, &QPushButton::clicked, this, &RegisterView::signup);
 	connect(isVaccinatedCheck, &QCheckBox::clicked, this, &RegisterView::toggleIsVaccinatedCheck);
 	connect(loginBtn, &QCheckBox::clicked, this, &RegisterView::goToLogin);
+	connect(countryComboBox, &QComboBox::currentTextChanged, this, &RegisterView::handleAbroad);
 }
 
 
@@ -82,5 +83,50 @@ bool RegisterView::handleErrors(map<string, string> state) {
 
 
 void RegisterView::goToLogin() {
+	this->clearView();
+
 	this->widgetsStack->setCurrentIndex(0);
+}
+
+
+void RegisterView::clearView() {
+	this->initGovComboBox();
+
+	firstNameInput->clear();
+	lastNameInput->clear();
+	nationalIdInput->clear();
+	passwordInput->clear();
+	ageSpinBox->setValue(5);
+	countryComboBox->setCurrentIndex(0);
+	genderComboBox->setCurrentIndex(0);
+	governmentComboBox->setCurrentIndex(0);
+	isVaccinatedCheck->setChecked(false);
+	oneDoseRadioBtn->setEnabled(false);
+	twoDoseRadioBtn->setEnabled(false);
+
+	fullNameError->hide();
+	nationalIdError->hide();
+	passwordError->hide();
+}
+
+
+void RegisterView::handleAbroad(QString country) {
+	
+
+	if (country == "Abroad") {
+		governmentComboBox->clear();
+		governmentComboBox->addItem("Abroad");
+	}
+	else {
+		this->initGovComboBox();
+	}
+}
+
+
+void RegisterView::initGovComboBox() {
+	governmentComboBox->clear();
+
+	for (auto gov : governments) {
+		governmentComboBox->addItem(QString::fromStdString(gov));
+	}
 }

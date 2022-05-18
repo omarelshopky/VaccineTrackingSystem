@@ -6,7 +6,7 @@ WidgetsStack::WidgetsStack(QWidget *parent)
     setupUi(this);
 
     // Add system windows to the Widgets stack
-    this->addWidget(new LoginView);
+    this->addWidget(new LoginView(this));
     this->addWidget(new RegisterView(this));
     this->addWidget(new UserProfileView);
     this->addWidget(new AdminDashboardView);
