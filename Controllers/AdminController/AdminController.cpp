@@ -146,6 +146,27 @@ map<string,int> AdminController::statOfAllGovernments() {
 }
 
 
+map<string, int> AdminController::statOfAllAges() {
+	map<string, int> info = { {"5<>17", 0}, {"18<>30", 0}, {"31<>64", 0}, {"<65", 0} };
+
+	for (auto users : User::select()) {
+		if (users.age >= 5 && users.age <= 17) {
+			info["5<>17"]++;
+		}
+		else if (users.age >= 18 && users.age <= 30) {
+			info["18<>30"]++;
+		}
+		else if (users.age >= 31 && users.age <= 64) {
+			info["31<>64"]++;
+		}
+		else if (users.age >= 65) {
+			info["<65"]++;
+		}
+	}
+	return info;
+}
+
+
 int AdminController::getAllUsersCount() {
 	return User::select({}).size();
 }

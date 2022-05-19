@@ -52,28 +52,35 @@ public:
 
 
     /**
-	* @brief gets the statistic about doses
+	* @brief Calculates statistic about users' Doses number
 	* @return map<string, float> -> the dose and its precentage 
 	*/
 	map<int, int> statOfAllDoses();
 
 
 	/**
-	* @brief gets the statistic about genders
+	* @brief Calculates statistic about users' gender 
 	* @return map<string, float> -> the male and the precentage of its dose
 	*/
 	map<string, int> statOfAllGenders();
 
 
 	/**
-	* @brief to get the statistic about governments 
+	* @brief Calculates statistic about users' government
 	* @return map<string, float> -> the govenment and the precentage of dose taken in
 	*/
 	map<string, int> statOfAllGovernments();
 
 
 	/**
-	* @brief Gets the number of all registered users in database
+	* @brief Calculates statistic about users' age
+	* @return map<string, float> -> the govenment and the precentage of dose taken in
+	*/
+	map<string, int> statOfAllAges();
+
+
+	/**
+	* @brief Calculate number of all registered users in database
 	* @return int the count of user registered in the system
 	*/
 	int getAllUsersCount();

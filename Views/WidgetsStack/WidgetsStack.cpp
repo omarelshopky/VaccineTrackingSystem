@@ -14,7 +14,7 @@ WidgetsStack::WidgetsStack(QWidget *parent)
     this->addWidget(new AdminPrivilageView);
 
     // Set the first window when the app startup
-    this->setCurrentIndex(1);
+    this->setCurrentIndex(4);
 }
 
 

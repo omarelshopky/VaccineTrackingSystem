@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/age-5-17.png</file>
+    <file>Assets/age-18-30.png</file>
+    <file>Assets/age-31-64.png</file>
+    <file>Assets/age-65.png</file>
     <file>Assets/app-icon.png</file>
     <file>Assets/back-button.png</file>
     <file>Assets/arrow-down.png</file>
