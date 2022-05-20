@@ -38,18 +38,22 @@ void AdminController::deleteUser(string nationalID) {
 }
 
 
-bool AdminController::giveAdminPrivilage(string nationalID , string password) {
+string AdminController::giveAdminPrivilage(string nationalID , string password) {
 	vector<User> users = User::select({ {"NationalID" , "=" , nationalID } });
 
 	if (!users.empty())
 	{
-		Admin admin(users[0].nationalID, password);
-		admin.insert();
-
-		return true;
+		if (Admin::select({ {"NationalID" , "=" , nationalID } }).size() == 0) {
+			Admin admin(users[0].nationalID, password);
+			admin.insert();
+			return "";
+		}
+		else {
+			return "This user is already an admin";
+		}	
 	}
 	else {
-		return false;
+		return "There is no user with that National ID";
 	}
 } 
 

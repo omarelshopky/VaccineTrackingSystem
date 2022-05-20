@@ -19,9 +19,9 @@ public:
 	/**
 	 * @brief Give Admin Privilege to a normal user
 	 * @param string nationalID  of the user , string password to make him an admin
-	 * @return bool determine wheather the process done successfully or not
+	 * @return string the error message if the process faild, return "" if it succeed
     */
-	bool giveAdminPrivilage(string nationalID , string password);
+	string giveAdminPrivilage(string nationalID , string password);
 
 
 	/**
