@@ -2,7 +2,6 @@
  * @file main.cpp
  * @brief Vaccine System Entrypoint
  * @details Creates an object of Widgets Stack and start the system loop
- *
  */
 
 #include "Views/WidgetsStack/WidgetsStack.h"
@@ -18,14 +17,8 @@ void enableConsole();
 
 int main(int argc, char *argv[])
 {
-    enableConsole();
+    if (mode == "development") enableConsole();
     
-    //************* Test Your code here ********************//
-    
-
-
-    //******************************************************//
-
     QApplication a(argc, argv);
     WidgetsStack w;
     w.show();

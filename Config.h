@@ -10,6 +10,11 @@
 
 using namespace std;
 
+/***				Constant				***/
+const string mode = "development"; // "production", "development"
+
+/**********************************************/
+
 
 /***				Enums				***/
 typedef enum { MALE, FEMALE } gender_t;
