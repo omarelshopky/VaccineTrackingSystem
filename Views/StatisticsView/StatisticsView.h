@@ -2,8 +2,6 @@
 
 #include <QMainWindow>
 #include <QtCharts>
-#include <iomanip>
-#include <locale>
 #include "ui_StatisticsView.h"
 #include "../../Controllers/AdminController/AdminController.h"
 

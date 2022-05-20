@@ -9,12 +9,12 @@ WidgetsStack::WidgetsStack(QWidget *parent)
     this->addWidget(new LoginView(this));
     this->addWidget(new RegisterView(this));
     this->addWidget(new UserProfileView);
-    this->addWidget(new AdminDashboardView);
+    this->addWidget(new AdminDashboardView(this));
     this->addWidget(new StatisticsView(this));
     this->addWidget(new AdminPrivilageView);
 
     // Set the first window when the app startup
-    this->setCurrentIndex(4);
+    this->setCurrentIndex(3);
 }
 
 

@@ -1,13 +1,29 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QStackedWidget>
 #include "ui_AdminDashboardView.h"
+#include "../../Controllers/AdminController/AdminController.h"
+
+
 
 class AdminDashboardView : public QMainWindow, public Ui::AdminDashboardView
 {
 	Q_OBJECT
 
+	QStackedWidget* widgetsStack;
+	AdminController adminController;
+	const int usersCountInTab = 1000;
+	int currentUserTab = 0;
+
 public:
-	AdminDashboardView(QWidget *parent = Q_NULLPTR);
+	AdminDashboardView(QStackedWidget *widgetsStack, QWidget *parent = Q_NULLPTR);
 	~AdminDashboardView();
+
+private:
+	void initUserTable();
+	bool changeTab(bool isNext);
+	void updateUserTable();
+	void setRowData(int row, User user);
+	void navigate(int pageIndex);
 };

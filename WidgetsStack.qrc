@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/add-admin-icon.png</file>
+    <file>Assets/delete-icon.png</file>
+    <file>Assets/icons8-list-64.png</file>
+    <file>Assets/next-icon - Copy.png</file>
+    <file>Assets/previous-icon.png</file>
+    <file>Assets/search-icon.png</file>
+    <file>Assets/statistics-icon.png</file>
     <file>Assets/age-5-17.png</file>
     <file>Assets/age-18-30.png</file>
     <file>Assets/age-31-64.png</file>
