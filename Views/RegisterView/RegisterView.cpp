@@ -18,6 +18,7 @@ RegisterView::RegisterView(QStackedWidget* widgetsStack, QWidget *parent)
 	connect(isVaccinatedCheck, &QCheckBox::clicked, this, &RegisterView::toggleIsVaccinatedCheck);
 	connect(loginBtn, &QCheckBox::clicked, this, &RegisterView::goToLogin);
 	connect(countryComboBox, &QComboBox::currentTextChanged, this, &RegisterView::handleAbroad);
+	connect(togglePassBtn, &QCheckBox::clicked, this, &RegisterView::togglePasswordVisibility);
 }
 
 
@@ -128,5 +129,16 @@ void RegisterView::initGovComboBox() {
 
 	for (auto gov : governments) {
 		governmentComboBox->addItem(QString::fromStdString(gov));
+	}
+}
+
+
+void RegisterView::togglePasswordVisibility()
+{
+	if (togglePassBtn->isChecked()) {
+		passwordInput->setEchoMode(QLineEdit::Normal);
+	}
+	else {
+		passwordInput->setEchoMode(QLineEdit::Password);
 	}
 }

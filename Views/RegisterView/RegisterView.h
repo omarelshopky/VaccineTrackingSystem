@@ -24,4 +24,5 @@ private:
 	void clearView();
 	void handleAbroad(QString country);
 	void initGovComboBox();
+	void togglePasswordVisibility();
 };

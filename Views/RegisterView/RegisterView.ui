@@ -438,33 +438,101 @@ color:rgb(218, 0, 0)
          </spacer>
         </item>
         <item>
-         <widget class="QLineEdit" name="passwordInput">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">*{
+         <layout class="QHBoxLayout" name="passHLayout">
+          <item>
+           <widget class="QLineEdit" name="passwordInput">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">*{
 border: 2px  ;
 border-radius: 10px;
 padding-left: 10px;
 }</string>
+            </property>
+            <property name="maxLength">
+             <number>20</number>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+            <property name="placeholderText">
+             <string>Password</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="togglePassBtn">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../WidgetsStack.qrc">
+              <normaloff>:/WidgetsStack/Assets/closed-eye-icon.png</normaloff>
+              <normalon>:/WidgetsStack/Assets/eye-icon.png</normalon>:/WidgetsStack/Assets/closed-eye-icon.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="ShowPasswordCheck">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
           </property>
-          <property name="maxLength">
-           <number>20</number>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>10</pointsize>
+           </font>
           </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
+          <property name="styleSheet">
+           <string notr="true"/>
           </property>
-          <property name="placeholderText">
-           <string>Password</string>
+          <property name="text">
+           <string>Show Password</string>
           </property>
          </widget>
         </item>
