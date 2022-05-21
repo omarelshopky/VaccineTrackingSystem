@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/logout-icon.png</file>
     <file>Assets/add-admin-icon.png</file>
     <file>Assets/delete-icon.png</file>
     <file>Assets/icons8-list-64.png</file>
