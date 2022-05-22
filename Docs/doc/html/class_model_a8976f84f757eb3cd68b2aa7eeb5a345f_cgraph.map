@@ -1,0 +1,6 @@
+<map id="Model::update" name="Model::update">
+<area shape="rect" id="node1" title="Update the record in the database." alt="" coords="5,56,109,83"/>
+<area shape="rect" id="node2" href="$class_model.html#a2dc1f28b869eb0949f348470f4d708dc" title=" " alt="" coords="157,5,308,32"/>
+<area shape="rect" id="node3" href="$class_model.html#a3b631ad2c2c93110e35609bb06576559" title="Convert the model object to map." alt="" coords="182,56,283,83"/>
+<area shape="rect" id="node4" href="$class_file_handler.html#aa8a2ae1726ce545fd6976cf0730f60e9" title="Update specific records from the table according to some conditions." alt="" coords="165,107,300,133"/>
+</map>

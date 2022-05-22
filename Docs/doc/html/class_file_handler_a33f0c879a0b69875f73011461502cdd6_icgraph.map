@@ -1,0 +1,6 @@
+<map id="FileHandler::remove" name="FileHandler::remove">
+<area shape="rect" id="node1" title="Remove specific records from the table according to some conditions." alt="" coords="403,31,539,57"/>
+<area shape="rect" id="node2" href="$class_model.html#a23ce0c054b0c0fbb81550fc24135c6c3" title="Remove the record from the database." alt="" coords="248,31,355,57"/>
+<area shape="rect" id="node3" href="$class_user_controller.html#a330203c7b5b9285280a582d43bf09840" title="Delete specific user account." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node4" href="$class_admin_controller.html#a4b371884d64cdd1ba7bd0c5ba8c02eae" title="Delete specific user from the database according to his nationalID." alt="" coords="11,56,195,83"/>
+</map>

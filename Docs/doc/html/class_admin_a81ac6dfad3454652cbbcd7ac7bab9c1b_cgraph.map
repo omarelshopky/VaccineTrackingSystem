@@ -1,0 +1,4 @@
+<map id="Admin::select" name="Admin::select">
+<area shape="rect" id="node1" title="Retrive specific admins from the database according to some conditions." alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node2" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="156,5,287,32"/>
+</map>

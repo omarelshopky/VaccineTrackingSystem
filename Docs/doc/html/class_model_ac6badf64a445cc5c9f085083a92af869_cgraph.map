@@ -1,0 +1,5 @@
+<map id="Model::insert" name="Model::insert">
+<area shape="rect" id="node1" title="Insert the record into the database." alt="" coords="5,31,103,57"/>
+<area shape="rect" id="node2" href="$class_file_handler.html#af31729ec5d0433519fbe2b28a591cce4" title="Insert new record into the table." alt="" coords="151,5,277,32"/>
+<area shape="rect" id="node3" href="$class_model.html#a3b631ad2c2c93110e35609bb06576559" title="Convert the model object to map." alt="" coords="163,56,265,83"/>
+</map>

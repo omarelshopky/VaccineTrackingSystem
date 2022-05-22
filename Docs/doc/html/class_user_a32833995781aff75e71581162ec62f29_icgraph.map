@@ -1,0 +1,17 @@
+<map id="User::select" name="User::select">
+<area shape="rect" id="node1" title="Retrive specific users from the database according to some conditions." alt="" coords="739,289,831,316"/>
+<area shape="rect" id="node2" href="$class_admin_controller.html#a99e242233b08969dbdebbb34511ba7f9" title="Delete all the users from the database." alt="" coords="494,5,685,32"/>
+<area shape="rect" id="node3" href="$class_user_controller.html#a21e339ca29adf03a60226c7ac09da86d" title="Gets a user informatino from database with specific national ID." alt="" coords="513,56,666,83"/>
+<area shape="rect" id="node5" href="$class_admin_controller.html#af09b2e14bb84641befa8144f3ac9c1c1" title="Calculate number of all registered users in database." alt="" coords="495,107,684,149"/>
+<area shape="rect" id="node8" href="$class_admin_controller.html#a3277d378d0785e25ad6d62dd27ae1413" title="Give Admin Privilege to a normal user." alt="" coords="499,173,680,214"/>
+<area shape="rect" id="node9" href="$class_user_controller.html#a36e69957a6f31ec57792a0118ba6e9d2" title="make login for user that stored in database" alt="" coords="520,239,659,265"/>
+<area shape="rect" id="node10" href="$class_admin_controller.html#a32de91a52da1cfbfbbe3584c1f4b4d0f" title="Calculates statistic about users&#39; age." alt="" coords="488,289,691,316"/>
+<area shape="rect" id="node11" href="$class_admin_controller.html#a4189e325f0ac96b42fd5d2634d36e1d8" title="Calculates statistic about users&#39; Doses number." alt="" coords="503,341,675,382"/>
+<area shape="rect" id="node12" href="$class_admin_controller.html#a96d4edf0f60bc9cdde8434121177b1ac" title="Calculates statistic about users&#39; gender." alt="" coords="503,406,675,447"/>
+<area shape="rect" id="node13" href="$class_admin_dashboard_view.html#ad59136f7818faf7765547851aa210502" title=" " alt="" coords="270,515,419,557"/>
+<area shape="rect" id="node14" href="$class_admin_controller.html#aa6e63f881105f352e447e54f0a456857" title="Retrive specific user from the database according to his nationalID." alt="" coords="503,523,676,549"/>
+<area shape="rect" id="node15" href="$class_admin_controller.html#a256c4c34aadeb57d77bb8dc776a192cc" title="View all the users that stored in the database." alt="" coords="499,573,679,600"/>
+<area shape="rect" id="node4" href="$class_user_profile_view.html#afc243303dfe1cb98d59e238fdb368b95" title=" " alt="" coords="261,56,428,83"/>
+<area shape="rect" id="node6" href="$class_statistics_view.html#ac11c8b89aa80448aec1aa707f6f43fc7" title="Updates the Ui data with the records from the database." alt="" coords="249,115,440,141"/>
+<area shape="rect" id="node7" href="$class_statistics_view.html#aefc1d10160b02ee7977305aaa6f63c97" title=" " alt="" coords="5,115,201,141"/>
+</map>

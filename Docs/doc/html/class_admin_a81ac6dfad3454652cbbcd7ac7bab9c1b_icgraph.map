@@ -1,0 +1,5 @@
+<map id="Admin::select" name="Admin::select">
+<area shape="rect" id="node1" title="Retrive specific admins from the database according to some conditions." alt="" coords="235,42,337,69"/>
+<area shape="rect" id="node2" href="$class_admin_controller.html#a3277d378d0785e25ad6d62dd27ae1413" title="Give Admin Privilege to a normal user." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node3" href="$class_admin_controller.html#ac1440cab2b3b558e726873ccd3456a6f" title="make login for admin that stored in database" alt="" coords="21,71,171,98"/>
+</map>

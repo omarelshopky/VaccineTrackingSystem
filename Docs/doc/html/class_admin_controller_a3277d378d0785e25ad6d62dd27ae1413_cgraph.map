@@ -1,0 +1,9 @@
+<map id="AdminController::giveAdminPrivilage" name="AdminController::giveAdminPrivilage">
+<area shape="rect" id="node1" title="Give Admin Privilege to a normal user." alt="" coords="5,74,187,115"/>
+<area shape="rect" id="node2" href="$class_model.html#ac6badf64a445cc5c9f085083a92af869" title="Insert the record into the database." alt="" coords="237,31,335,57"/>
+<area shape="rect" id="node5" href="$class_admin.html#a81ac6dfad3454652cbbcd7ac7bab9c1b" title="Retrive specific admins from the database according to some conditions." alt="" coords="235,81,337,108"/>
+<area shape="rect" id="node7" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="240,132,332,159"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#af31729ec5d0433519fbe2b28a591cce4" title="Insert new record into the table." alt="" coords="387,5,514,32"/>
+<area shape="rect" id="node4" href="$class_model.html#a3b631ad2c2c93110e35609bb06576559" title="Convert the model object to map." alt="" coords="400,56,501,83"/>
+<area shape="rect" id="node6" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="385,119,516,145"/>
+</map>

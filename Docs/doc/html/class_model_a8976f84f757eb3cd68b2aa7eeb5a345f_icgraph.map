@@ -1,0 +1,4 @@
+<map id="Model::update" name="Model::update">
+<area shape="rect" id="node1" title="Update the record in the database." alt="" coords="187,5,291,32"/>
+<area shape="rect" id="node2" href="$class_user_controller.html#a8735729191ff3be3d2cf5e6aa1c6bb25" title="Edit the user information." alt="" coords="5,5,139,32"/>
+</map>

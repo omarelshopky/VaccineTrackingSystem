@@ -1,0 +1,4 @@
+<map id="User::select" name="User::select">
+<area shape="rect" id="node1" title="Retrive specific users from the database according to some conditions." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="node2" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="145,5,276,32"/>
+</map>

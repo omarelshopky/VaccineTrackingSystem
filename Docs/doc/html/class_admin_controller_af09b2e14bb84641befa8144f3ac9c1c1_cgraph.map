@@ -1,0 +1,5 @@
+<map id="AdminController::getAllUsersCount" name="AdminController::getAllUsersCount">
+<area shape="rect" id="node1" title="Calculate number of all registered users in database." alt="" coords="5,5,195,47"/>
+<area shape="rect" id="node2" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="243,13,335,39"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="383,13,513,39"/>
+</map>

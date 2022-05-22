@@ -1,0 +1,30 @@
+<map id="E:/Work/Desktop Application/Vaccine Tracking System/Core/Model/Model.h" name="E:/Work/Desktop Application/Vaccine Tracking System/Core/Model/Model.h">
+<area shape="rect" id="node1" title="Handle file process (retriving, update and delete) which is the core for all the models." alt="" coords="847,5,1037,61"/>
+<area shape="rect" id="node2" href="$_model_8cpp.html" title=" " alt="" coords="632,109,823,165"/>
+<area shape="rect" id="node3" href="$_admin_8h.html" title=" " alt="" coords="1061,109,1252,165"/>
+<area shape="rect" id="node20" href="$_user_8h.html" title=" " alt="" coords="847,109,1037,165"/>
+<area shape="rect" id="node4" href="$_admin_controller_8h.html" title=" " alt="" coords="1041,213,1232,284"/>
+<area shape="rect" id="node19" href="$_admin_8cpp.html" title=" " alt="" coords="1256,221,1447,277"/>
+<area shape="rect" id="node5" href="$_admin_controller_8cpp.html" title=" " alt="" coords="1715,332,1905,403"/>
+<area shape="rect" id="node6" href="$_admin_dashboard_view_8h.html" title=" " alt="" coords="1058,451,1250,521"/>
+<area shape="rect" id="node8" href="$_login_view_8h.html" title=" " alt="" coords="607,577,805,633"/>
+<area shape="rect" id="node13" href="$_admin_privilage_view_8h.html" title=" " alt="" coords="1500,332,1691,403"/>
+<area shape="rect" id="node15" href="$_statistics_view_8h.html" title=" " alt="" coords="859,332,1065,403"/>
+<area shape="rect" id="node17" href="$_waiting_list_view_8h.html" title=" " alt="" coords="1174,332,1401,403"/>
+<area shape="rect" id="node7" href="$_admin_dashboard_view_8cpp.html" title=" " alt="" coords="925,569,1117,640"/>
+<area shape="rect" id="node10" href="$_widgets_stack_8h.html" title=" " alt="" coords="779,688,1023,744"/>
+<area shape="rect" id="node9" href="$_login_view_8cpp.html" title=" " alt="" coords="543,688,755,744"/>
+<area shape="rect" id="node11" href="$main_8cpp.html" title="Vaccine System Entrypoint." alt="" coords="681,792,872,848"/>
+<area shape="rect" id="node12" href="$_widgets_stack_8cpp.html" title=" " alt="" coords="897,792,1155,848"/>
+<area shape="rect" id="node14" href="$_admin_privilage_view_8cpp.html" title=" " alt="" coords="1576,451,1767,521"/>
+<area shape="rect" id="node16" href="$_statistics_view_8cpp.html" title=" " alt="" coords="827,451,1033,521"/>
+<area shape="rect" id="node18" href="$_waiting_list_view_8cpp.html" title=" " alt="" coords="1325,451,1551,521"/>
+<area shape="rect" id="node21" href="$_user_controller_8h.html" title=" " alt="" coords="392,332,583,403"/>
+<area shape="rect" id="node27" href="$_data_generator_8cpp.html" title=" " alt="" coords="520,221,711,277"/>
+<area shape="rect" id="node28" href="$_user_8cpp.html" title=" " alt="" coords="735,221,925,277"/>
+<area shape="rect" id="node22" href="$_user_controller_8cpp.html" title=" " alt="" coords="509,451,700,521"/>
+<area shape="rect" id="node23" href="$_register_view_8h.html" title=" " alt="" coords="253,458,485,514"/>
+<area shape="rect" id="node25" href="$_user_profile_view_8h.html" title=" " alt="" coords="5,451,228,521"/>
+<area shape="rect" id="node24" href="$_register_view_8cpp.html" title=" " alt="" coords="336,577,583,633"/>
+<area shape="rect" id="node26" href="$_user_profile_view_8cpp.html" title=" " alt="" coords="37,569,260,640"/>
+</map>

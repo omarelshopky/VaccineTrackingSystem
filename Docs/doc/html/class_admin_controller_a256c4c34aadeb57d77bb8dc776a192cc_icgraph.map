@@ -1,0 +1,4 @@
+<map id="AdminController::viewUsers" name="AdminController::viewUsers">
+<area shape="rect" id="node1" title="View all the users that stored in the database." alt="" coords="203,13,383,39"/>
+<area shape="rect" id="node2" href="$class_admin_dashboard_view.html#ad59136f7818faf7765547851aa210502" title=" " alt="" coords="5,5,155,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="AdminController::statOfAllAges" name="AdminController::statOfAllAges">
+<area shape="rect" id="node1" title="Calculates statistic about users&#39; age." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="256,5,348,32"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="396,5,527,32"/>
+</map>

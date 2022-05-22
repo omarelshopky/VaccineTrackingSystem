@@ -1,0 +1,7 @@
+<map id="StatisticsView::StatisticsView" name="StatisticsView::StatisticsView">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,201,39"/>
+<area shape="rect" id="node2" href="$class_statistics_view.html#ac11c8b89aa80448aec1aa707f6f43fc7" title="Updates the Ui data with the records from the database." alt="" coords="249,13,440,39"/>
+<area shape="rect" id="node3" href="$class_admin_controller.html#af09b2e14bb84641befa8144f3ac9c1c1" title="Calculate number of all registered users in database." alt="" coords="488,5,677,47"/>
+<area shape="rect" id="node4" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="725,13,817,39"/>
+<area shape="rect" id="node5" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="865,13,996,39"/>
+</map>

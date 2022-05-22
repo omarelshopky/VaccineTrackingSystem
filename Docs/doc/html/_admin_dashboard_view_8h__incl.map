@@ -1,0 +1,25 @@
+<map id="E:/Work/Desktop Application/Vaccine Tracking System/Views/AdminDashboardView/AdminDashboardView.h" name="E:/Work/Desktop Application/Vaccine Tracking System/Views/AdminDashboardView/AdminDashboardView.h">
+<area shape="rect" id="node1" title=" " alt="" coords="341,5,533,76"/>
+<area shape="rect" id="node2" title=" " alt="" coords="318,221,425,247"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,221,127,247"/>
+<area shape="rect" id="node4" title=" " alt="" coords="285,131,463,158"/>
+<area shape="rect" id="node5" href="$_admin_controller_8h.html" title=" " alt="" coords="449,213,653,255"/>
+<area shape="rect" id="node19" href="$_statistics_view_8h.html" title=" " alt="" coords="589,124,765,165"/>
+<area shape="rect" id="node22" href="$_waiting_list_view_8h.html" title=" " alt="" coords="130,124,261,165"/>
+<area shape="rect" id="node6" href="$_admin_8h.html" title=" " alt="" coords="401,303,531,344"/>
+<area shape="rect" id="node18" href="$_user_8h.html" title=" " alt="" coords="555,310,716,337"/>
+<area shape="rect" id="node7" href="$_model_8h.html" title="Handle file process (retriving, update and delete) which is the core for all the models." alt="" coords="469,392,631,419"/>
+<area shape="rect" id="node8" href="$_file_handler_8h.html" title=" " alt="" coords="479,467,621,508"/>
+<area shape="rect" id="node9" href="$_config_8h.html" title=" " alt="" coords="503,556,597,583"/>
+<area shape="rect" id="node10" title=" " alt="" coords="205,631,277,657"/>
+<area shape="rect" id="node11" title=" " alt="" coords="301,631,367,657"/>
+<area shape="rect" id="node12" title=" " alt="" coords="391,631,461,657"/>
+<area shape="rect" id="node13" title=" " alt="" coords="485,631,540,657"/>
+<area shape="rect" id="node14" title=" " alt="" coords="564,631,611,657"/>
+<area shape="rect" id="node15" title=" " alt="" coords="635,631,691,657"/>
+<area shape="rect" id="node16" title=" " alt="" coords="716,631,773,657"/>
+<area shape="rect" id="node17" title=" " alt="" coords="797,631,908,657"/>
+<area shape="rect" id="node20" title=" " alt="" coords="678,221,753,247"/>
+<area shape="rect" id="node21" title=" " alt="" coords="777,221,910,247"/>
+<area shape="rect" id="node23" title=" " alt="" coords="151,221,293,247"/>
+</map>

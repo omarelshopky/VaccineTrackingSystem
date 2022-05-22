@@ -1,0 +1,8 @@
+<map id="Model::toMap" name="Model::toMap">
+<area shape="rect" id="node1" title="Convert the model object to map." alt="" coords="387,97,488,123"/>
+<area shape="rect" id="node2" href="$class_model.html#ac6badf64a445cc5c9f085083a92af869" title="Insert the record into the database." alt="" coords="238,71,335,98"/>
+<area shape="rect" id="node5" href="$class_model.html#a8976f84f757eb3cd68b2aa7eeb5a345f" title="Update the record in the database." alt="" coords="235,122,339,149"/>
+<area shape="rect" id="node3" href="$class_admin_controller.html#a3277d378d0785e25ad6d62dd27ae1413" title="Give Admin Privilege to a normal user." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node4" href="$class_user_controller.html#ac1e7494d83dc2c90884a3319ed9f31ca" title="User registration." alt="" coords="21,71,171,98"/>
+<area shape="rect" id="node6" href="$class_user_controller.html#a8735729191ff3be3d2cf5e6aa1c6bb25" title="Edit the user information." alt="" coords="29,122,163,149"/>
+</map>

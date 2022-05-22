@@ -1,0 +1,5 @@
+<map id="AdminController::login" name="AdminController::login">
+<area shape="rect" id="node1" title="make login for admin that stored in database" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$class_admin.html#a81ac6dfad3454652cbbcd7ac7bab9c1b" title="Retrive specific admins from the database according to some conditions." alt="" coords="203,5,305,32"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="353,5,484,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FileHandler::update" name="FileHandler::update">
+<area shape="rect" id="node1" title="Update specific records from the table according to some conditions." alt="" coords="339,5,473,32"/>
+<area shape="rect" id="node2" href="$class_model.html#a8976f84f757eb3cd68b2aa7eeb5a345f" title="Update the record in the database." alt="" coords="187,5,291,32"/>
+<area shape="rect" id="node3" href="$class_user_controller.html#a8735729191ff3be3d2cf5e6aa1c6bb25" title="Edit the user information." alt="" coords="5,5,139,32"/>
+</map>

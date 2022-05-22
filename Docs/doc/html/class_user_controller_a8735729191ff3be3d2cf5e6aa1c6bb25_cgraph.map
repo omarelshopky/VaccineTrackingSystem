@@ -1,0 +1,7 @@
+<map id="UserController::edit" name="UserController::edit">
+<area shape="rect" id="node1" title="Edit the user information." alt="" coords="5,56,139,83"/>
+<area shape="rect" id="node2" href="$class_model.html#a8976f84f757eb3cd68b2aa7eeb5a345f" title="Update the record in the database." alt="" coords="187,56,291,83"/>
+<area shape="rect" id="node3" href="$class_model.html#a2dc1f28b869eb0949f348470f4d708dc" title=" " alt="" coords="339,5,489,32"/>
+<area shape="rect" id="node4" href="$class_model.html#a3b631ad2c2c93110e35609bb06576559" title="Convert the model object to map." alt="" coords="363,56,465,83"/>
+<area shape="rect" id="node5" href="$class_file_handler.html#aa8a2ae1726ce545fd6976cf0730f60e9" title="Update specific records from the table according to some conditions." alt="" coords="347,107,481,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="UserController::display" name="UserController::display">
+<area shape="rect" id="node1" title="Gets a user informatino from database with specific national ID." alt="" coords="220,5,373,32"/>
+<area shape="rect" id="node2" href="$class_user_profile_view.html#afc243303dfe1cb98d59e238fdb368b95" title=" " alt="" coords="5,5,172,32"/>
+</map>

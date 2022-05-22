@@ -1,0 +1,5 @@
+<map id="AdminController::viewUser" name="AdminController::viewUser">
+<area shape="rect" id="node1" title="Retrive specific user from the database according to his nationalID." alt="" coords="5,5,179,32"/>
+<area shape="rect" id="node2" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="227,5,319,32"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="367,5,497,32"/>
+</map>

@@ -7,9 +7,6 @@
 #include "Views/WidgetsStack/WidgetsStack.h"
 #include <QtWidgets/QApplication>
 #include <Windows.h> // Display the output to the console for debuging purpose
-#include <iostream>
-#include "Controllers/UserController/UserController.h"
-#include "Controllers/AdminController/AdminController.h"
 
 
 void enableConsole();
@@ -17,7 +14,7 @@ void enableConsole();
 
 int main(int argc, char *argv[])
 {
-    if (mode == "production") enableConsole();
+    if (mode == "development") enableConsole();
 
     QApplication app(argc, argv);
     WidgetsStack widgetsStack;

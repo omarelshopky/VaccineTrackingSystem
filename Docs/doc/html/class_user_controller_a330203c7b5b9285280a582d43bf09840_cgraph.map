@@ -1,0 +1,6 @@
+<map id="UserController::deleteAccount" name="UserController::deleteAccount">
+<area shape="rect" id="node1" title="Delete specific user account." alt="" coords="5,31,200,57"/>
+<area shape="rect" id="node2" href="$class_model.html#a23ce0c054b0c0fbb81550fc24135c6c3" title="Remove the record from the database." alt="" coords="248,31,355,57"/>
+<area shape="rect" id="node3" href="$class_model.html#a2dc1f28b869eb0949f348470f4d708dc" title=" " alt="" coords="403,5,553,32"/>
+<area shape="rect" id="node4" href="$class_file_handler.html#a33f0c879a0b69875f73011461502cdd6" title="Remove specific records from the table according to some conditions." alt="" coords="410,56,546,83"/>
+</map>

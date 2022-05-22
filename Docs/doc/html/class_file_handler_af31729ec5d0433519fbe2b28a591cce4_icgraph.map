@@ -1,0 +1,6 @@
+<map id="FileHandler::insert" name="FileHandler::insert">
+<area shape="rect" id="node1" title="Insert new record into the table." alt="" coords="380,42,507,69"/>
+<area shape="rect" id="node2" href="$class_model.html#ac6badf64a445cc5c9f085083a92af869" title="Insert the record into the database." alt="" coords="235,42,332,69"/>
+<area shape="rect" id="node3" href="$class_admin_controller.html#a3277d378d0785e25ad6d62dd27ae1413" title="Give Admin Privilege to a normal user." alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node4" href="$class_user_controller.html#ac1e7494d83dc2c90884a3319ed9f31ca" title="User registration." alt="" coords="21,71,171,98"/>
+</map>

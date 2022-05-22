@@ -1,0 +1,5 @@
+<map id="AdminController::statOfAllGenders" name="AdminController::statOfAllGenders">
+<area shape="rect" id="node1" title="Calculates statistic about users&#39; gender." alt="" coords="5,5,177,47"/>
+<area shape="rect" id="node2" href="$class_user.html#a32833995781aff75e71581162ec62f29" title="Retrive specific users from the database according to some conditions." alt="" coords="225,13,317,39"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#afb40889df66c2d5b8079ec15f3d4319e" title="Retrive specific records from the table according to some conditions." alt="" coords="365,13,496,39"/>
+</map>

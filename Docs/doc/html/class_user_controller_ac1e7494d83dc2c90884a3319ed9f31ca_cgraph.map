@@ -1,0 +1,6 @@
+<map id="UserController::signup" name="UserController::signup">
+<area shape="rect" id="node1" title="User registration." alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node2" href="$class_model.html#ac6badf64a445cc5c9f085083a92af869" title="Insert the record into the database." alt="" coords="204,31,301,57"/>
+<area shape="rect" id="node3" href="$class_file_handler.html#af31729ec5d0433519fbe2b28a591cce4" title="Insert new record into the table." alt="" coords="349,5,476,32"/>
+<area shape="rect" id="node4" href="$class_model.html#a3b631ad2c2c93110e35609bb06576559" title="Convert the model object to map." alt="" coords="362,56,463,83"/>
+</map>
