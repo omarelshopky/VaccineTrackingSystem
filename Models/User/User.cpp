@@ -7,7 +7,7 @@ FileHandler User::fileHandler(
 );
 
 
-User::User() {
+User::User() : Model(&User::fileHandler) {
 	fullName = nationalID = password = gender = country = government = "";
 	age = isVaccinated = dosesNumber = 0;
 };
@@ -16,24 +16,13 @@ User::User() {
 User::User(string fullName, string nationalID, string password, string gender, 
 	int age, string country, string government, bool isVaccinated, int dosesNumber) :
 	fullName(fullName), nationalID(nationalID), password(password), gender(gender), 
-	age(age), country(country), government(government), isVaccinated(isVaccinated), dosesNumber(dosesNumber) {}
+	age(age), country(country), government(government), isVaccinated(isVaccinated), dosesNumber(dosesNumber),
+	Model(&User::fileHandler)
+{}
 
 
-bool User::insert() {
-	return User::fileHandler.insert(this->toMap());
-}
-
-
-void User::update() {
-	User::fileHandler.update(
-		this->toMap(),
-		{ {User::fileHandler.primaryKey, "=", this->nationalID} }
-	);
-}
-
-
-void User::remove() {
-	User::fileHandler.remove({ {User::fileHandler.primaryKey, "=", this->nationalID} });
+string User::getPrimaryKey() {
+	return this->nationalID;
 }
 
 

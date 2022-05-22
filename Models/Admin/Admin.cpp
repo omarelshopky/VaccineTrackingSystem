@@ -8,29 +8,16 @@ FileHandler Admin::fileHandler(
 );
 
 
-Admin::Admin() {
+Admin::Admin() : Model(&Admin::fileHandler) {
 	nationalID = password = "";
 };
 
 
-Admin::Admin(string nationalID, string password) : nationalID(nationalID), password(password) {}
+Admin::Admin(string nationalID, string password) : nationalID(nationalID), password(password), Model(&Admin::fileHandler) {}
 
 
-bool Admin::insert() {
-	return Admin::fileHandler.insert(this->toMap());
-}
-
-
-void Admin::update() {
-	Admin::fileHandler.update(
-		this->toMap(),
-		{ {Admin::fileHandler.primaryKey, "=", this->nationalID} }
-	);
-}
-
-
-void Admin::remove() {
-	Admin::fileHandler.remove({ {Admin::fileHandler.primaryKey, "=", this->nationalID} });
+string Admin::getPrimaryKey() {
+	return this->nationalID;
 }
 
 

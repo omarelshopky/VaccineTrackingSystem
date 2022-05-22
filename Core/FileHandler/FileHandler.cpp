@@ -1,5 +1,6 @@
 #include "FileHandler.h"
 
+FileHandler::FileHandler() {};
 
 FileHandler::FileHandler(string fileName, vector<string> headers, string primaryKey) : 
 	filePath(DATA_DIR_PATH + fileName + FILE_EXTENSION),headers(headers), primaryKey(primaryKey) {

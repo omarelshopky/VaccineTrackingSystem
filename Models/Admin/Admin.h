@@ -1,8 +1,8 @@
 #pragma once
-#include "../../Core/FileHandler/FileHandler.h"
+#include "../../Core/Model/Model.h"
 
 
-class Admin 
+class Admin : public Model
 {
 	static FileHandler fileHandler;
 
@@ -16,22 +16,10 @@ public:
 
 
 	/**
-	 * @brief Insert the Admin into the database
-=	 * @return bool shows if the insertation process done successfully or not (true -> inserted successfully, false -> redundant National ID)
-	 */
-	bool insert();
-
-
-	/**
-	 * @brief Update the Admin in the database
-	 */
-	void update();
-
-
-	/**
-	 * @brief Remove the Admin from the database
-	 */
-	void remove();
+	* @breif Return the model primary key
+	* @return string primary key of the mode
+	*/
+	string getPrimaryKey();
 
 
 	/**

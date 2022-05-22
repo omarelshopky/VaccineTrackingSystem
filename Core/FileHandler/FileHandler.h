@@ -17,6 +17,8 @@ public:
 	vector<string> headers;
 
 
+	FileHandler();
+
 	/**
 	 * @brief FileHandler Constructor
 	 * @param string fileName containing the table data

@@ -60,6 +60,9 @@
     <Filter Include="Views\WaitingListView">
       <UniqueIdentifier>{446500a5-8bbd-4ecd-a47c-c5c572acf525}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Model">
+      <UniqueIdentifier>{f96a48c1-e805-4337-8f92-8ef72e78636d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -103,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="Views\WaitingListView\WaitingListView.cpp">
       <Filter>Views\WaitingListView</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Model\Model.cpp">
+      <Filter>Core\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="DataGenerator.cpp">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Model\Model.h">
+      <Filter>Core\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
