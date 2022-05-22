@@ -86,7 +86,7 @@ bool RegisterView::handleErrors(map<string, string> state) {
 void RegisterView::goToLogin() {
 	this->clearView();
 
-	this->widgetsStack->setCurrentIndex(0);
+	this->widgetsStack->setCurrentIndex(LOGIN_VIEW_INDEX);
 }
 
 

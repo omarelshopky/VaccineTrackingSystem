@@ -39,7 +39,7 @@ void AdminPrivilageView::giveAdminPrivilage() {
 
 void AdminPrivilageView::goBack() {
 	clearView();
-	this->widgetStack->setCurrentIndex(3);
+	this->widgetStack->setCurrentIndex(ADMIN_DASHBOARD_VIEW_INDEX);
 }
 
 

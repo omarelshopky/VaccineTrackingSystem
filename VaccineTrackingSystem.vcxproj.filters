@@ -57,6 +57,9 @@
     <Filter Include="Core\FileHandler">
       <UniqueIdentifier>{e34a75cb-291e-4685-bc61-16882416a51d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Views\WaitingListView">
+      <UniqueIdentifier>{446500a5-8bbd-4ecd-a47c-c5c572acf525}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -98,6 +101,9 @@
     <ClCompile Include="Core\FileHandler\FileHandler.cpp">
       <Filter>Core\FileHandler</Filter>
     </ClCompile>
+    <ClCompile Include="Views\WaitingListView\WaitingListView.cpp">
+      <Filter>Views\WaitingListView</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Views\LoginView\LoginView.ui">
@@ -120,6 +126,9 @@
     </QtUic>
     <QtUic Include="Views\AdminPrivilageView\AdminPrivilageView.ui">
       <Filter>Views\AdminPrivilageView</Filter>
+    </QtUic>
+    <QtUic Include="Views\WaitingListView\WaitingListView.ui">
+      <Filter>Views\WaitingListView</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +153,9 @@
     <QtMoc Include="Views\StatisticsView\StatisticsView.h">
       <Filter>Views\StatisticsView</Filter>
     </QtMoc>
+    <QtMoc Include="Views\WaitingListView\WaitingListView.h">
+      <Filter>Views\WaitingListView</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Models\Admin\Admin.h">
@@ -163,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="Core\FileHandler\FileHandler.h">
       <Filter>Core\FileHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="DataGenerator.cpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

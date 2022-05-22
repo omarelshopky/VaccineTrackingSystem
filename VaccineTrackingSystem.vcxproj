@@ -96,6 +96,7 @@
     <QtUic Include="Views\RegisterView\RegisterView.ui" />
     <QtUic Include="Views\StatisticsView\StatisticsView.ui" />
     <QtUic Include="Views\UserProfileView\UserProfileView.ui" />
+    <QtUic Include="Views\WaitingListView\WaitingListView.ui" />
     <QtUic Include="Views\WidgetsStack\WidgetsStack.ui" />
     <ClCompile Include="Controllers\AdminController\AdminController.cpp" />
     <ClCompile Include="Controllers\UserController\UserController.cpp" />
@@ -108,6 +109,7 @@
     <ClCompile Include="Views\RegisterView\RegisterView.cpp" />
     <ClCompile Include="Views\StatisticsView\StatisticsView.cpp" />
     <ClCompile Include="Views\UserProfileView\UserProfileView.cpp" />
+    <ClCompile Include="Views\WaitingListView\WaitingListView.cpp" />
     <ClCompile Include="Views\WidgetsStack\WidgetsStack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -131,8 +133,10 @@
     <ClInclude Include="Controllers\UserController\UserController.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Core\FileHandler\FileHandler.h" />
+    <ClInclude Include="DataGenerator.cpp" />
     <ClInclude Include="Models\Admin\Admin.h" />
     <ClInclude Include="Models\User\User.h" />
+    <QtMoc Include="Views\WaitingListView\WaitingListView.h" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="WidgetsStack.qrc" />

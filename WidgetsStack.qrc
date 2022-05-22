@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="WidgetsStack">
+    <file>Assets/correct-icon.png</file>
     <file>Assets/closed-eye-icon.png</file>
     <file>Assets/eye-icon.png</file>
     <file>Assets/logout-icon.png</file>

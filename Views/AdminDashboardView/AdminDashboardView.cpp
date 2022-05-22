@@ -10,13 +10,18 @@ AdminDashboardView::AdminDashboardView(QStackedWidget *widgetsStack, QWidget *pa
 	// Initialize components prop
 	nationalIdInput->setValidator(new QDoubleValidator(0, 100, 2, this)); //nationalId accept only numbers
 	initUserTable();
+	clearView();
 
 	// Attach signals function
-	connect(statBtn, &QPushButton::clicked, this, [this] { navigate(4); });
-	connect(addAdminBtn, &QPushButton::clicked, this, [this] { navigate(5); });
+	connect(statBtn, &QPushButton::clicked, this, [this] { navigate(STATISTICS_VIEW_INDEX); });
+	connect(addAdminBtn, &QPushButton::clicked, this, [this] { navigate(ADMIN_PRIVILAGE_VIEW_INDEX); });
+	connect(waitingListBtn, &QPushButton::clicked, this, [this] { navigate(WAITING_LIST_VIEW_INDEX); });
 	connect(nextBtn, &QPushButton::clicked, this, [this] { changeTab(true); });
 	connect(previousBtn, &QPushButton::clicked, this, [this] { changeTab(false); });
-	//connect(backBtn, &QPushButton::clicked, this, &AdminDashboardView::previousView);
+	connect(searchBtn, &QPushButton::clicked, this, &AdminDashboardView::search);
+	connect(nationalIdInput, &QLineEdit::textChanged, this, &AdminDashboardView::cancleSearch);
+	connect(deleteBtn, &QPushButton::clicked, this, &AdminDashboardView::deleteUsers);
+	connect(logoutBtn, &QPushButton::clicked, this, &AdminDashboardView::logout);
 }
 
 
@@ -33,10 +38,18 @@ void AdminDashboardView::initUserTable() {
 		for (int j = 0; j < 8; j++) {
 			usersTable->setItem(i, j, new QTableWidgetItem());
 		}
-		if (allUsersCount > i)
-			setRowData(i, users[i + currentUserTab * usersCountInTab]);
+		if (allUsersCount > i) {
+			setRowData(i, users[i + (long long)currentUserTab * usersCountInTab]);
+			currentUsersShown = i;
+		}
 		else
 			usersTable->hideRow(i);
+	}
+
+	// Row for User retrieved from search 
+	usersTable->insertRow(usersTable->rowCount());
+	for (int j = 0; j < 8; j++) {
+		usersTable->setItem(usersCountInTab, j, new QTableWidgetItem());
 	}
 }
 
@@ -46,9 +59,11 @@ void AdminDashboardView::updateUserTable() {
 	vector<User> users = User::select();
 
 	for (int i = 0; i < usersCountInTab; i++) {
-		if (allUsersCount > i + currentUserTab * usersCountInTab) {
-			setRowData(i, users[i + currentUserTab * usersCountInTab]);
-		}
+		long long index = i + (long long)currentUserTab * usersCountInTab;
+		if (allUsersCount > index) {
+			setRowData(i, users[index]);
+			currentUsersShown = i;
+		}  
 		else {
 			usersTable->hideRow(i);
 		}
@@ -86,6 +101,7 @@ bool AdminDashboardView::changeTab(bool isNext) {
 	}
 
 	if (changed) {
+		usersTable->clearSelection();
 		currentTabLbl->setText(QString::fromStdString(to_string(currentUserTab)));
 		updateUserTable();
 	}
@@ -108,5 +124,84 @@ void AdminDashboardView::setRowData(int row, User user) {
 
 
 void AdminDashboardView::navigate(int pageIndex) {
+	switch (pageIndex)
+	{
+	case STATISTICS_VIEW_INDEX:
+		((StatisticsView*)(widgetsStack->widget(STATISTICS_VIEW_INDEX)))->updateUiData();
+		break;
+	case WAITING_LIST_VIEW_INDEX:
+		((WaitingListView*)(widgetsStack->widget(WAITING_LIST_VIEW_INDEX)))->updateUiData();
+	default:
+		break;
+	}
+
 	widgetsStack->setCurrentIndex(pageIndex);
+}
+
+
+void AdminDashboardView::search() {
+	User user = adminController.viewUser(nationalIdInput->text().toStdString());
+
+	if (user.nationalID != "") {
+		for (int i = 0; i < currentUsersShown+1; i++) {
+			usersTable->hideRow(i);
+		}
+
+		nationalIdError->hide();
+		setRowData(usersCountInTab, user);
+		isSearching = true;
+	}
+	else {
+		nationalIdError->show();
+	}
+}
+
+
+void AdminDashboardView::cancleSearch(QString text="manual") {
+	if ((text == "" || text == "manual") && isSearching) {
+		isSearching = false;
+		usersTable->hideRow(usersCountInTab);
+		
+		if (text == "") {
+			for (int i = 0; i < currentUsersShown+1; i++) {
+				usersTable->showRow(i);
+			}
+		}
+	}
+	deleteMsg->hide();
+}
+      
+		
+void AdminDashboardView::deleteUsers() {
+	if (isSearching) {
+		adminController.deleteUser(usersTable->item(usersCountInTab, 0)->text().toStdString());
+		cancleSearch();
+		nationalIdInput->clear();
+	}
+	else {
+		for (int i = 0; i < usersCountInTab; i++) {
+			if (usersTable->item(i, 0)->isSelected()) {
+				adminController.deleteUser(usersTable->item(i, 0)->text().toStdString());
+			}
+		}
+		usersTable->clearSelection();
+	}
+	
+	updateUserTable();
+	deleteMsg->show();
+}
+
+
+void AdminDashboardView::logout() {
+	widgetsStack->setCurrentIndex(LOGIN_VIEW_INDEX);
+	clearView();
+}
+
+
+void AdminDashboardView::clearView() {
+	currentUserTab = 0;
+	nationalIdInput->clear();
+	nationalIdError->hide();
+	deleteMsg->hide();
+	usersTable->clearSelection();
 }

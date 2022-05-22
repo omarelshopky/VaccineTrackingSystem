@@ -193,7 +193,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-182</y>
+         <y>0</y>
          <width>1164</width>
          <height>4922</height>
         </rect>
@@ -5179,7 +5179,7 @@ QPushButton:pressed {
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="../../WidgetsStack.qrc"/>
-  <include location="WidgetsStack.qrc"/>
+  <include location="../../WidgetsStack.qrc"/>
  </resources>
  <connections/>
 </ui>

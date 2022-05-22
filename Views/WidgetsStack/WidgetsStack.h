@@ -10,6 +10,7 @@
 #include "../AdminDashboardView/AdminDashboardView.h"
 #include "../StatisticsView/StatisticsView.h"
 #include "../AdminPrivilageView/AdminPrivilageView.h"
+#include "../WaitingListView/WaitingListView.h"
 //****************************************//
 
 

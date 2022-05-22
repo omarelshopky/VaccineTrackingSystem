@@ -6,6 +6,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <queue>
+#include <unordered_map>
 
 
 using namespace std;
@@ -35,12 +37,20 @@ struct condition {
 /*****************************************/
 
 
-/***					Constants						***/
+/***					Defination						***/
 #define RECORD_SPLITER '|'
 
 #define FILE_EXTENSION ".txt"
 
 #define DATA_DIR_PATH "Data/"
+
+#define LOGIN_VIEW_INDEX 0
+#define REGISTER_VIEW_INDEX 1
+#define USER_PROFILE_VIEW_INDEX 2
+#define ADMIN_DASHBOARD_VIEW_INDEX 3
+#define STATISTICS_VIEW_INDEX 4
+#define ADMIN_PRIVILAGE_VIEW_INDEX 5
+#define WAITING_LIST_VIEW_INDEX 6
 
 
 /**********************************************************/

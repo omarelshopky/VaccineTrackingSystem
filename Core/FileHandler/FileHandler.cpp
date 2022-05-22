@@ -151,7 +151,7 @@ int FileHandler::update(map<string, string> data, vector<condition> conditions) 
         // Update when the record is valid
         if (valid) {
             for (map<string, string>::iterator it = data.begin(); it != data.end(); ++it) {
-                if (it->first != this->primaryKey || (it->first == this->primaryKey && this->isUnique(it->second))) {
+                if ((it->first != this->primaryKey || (it->first == this->primaryKey && this->isUnique(it->second))) && it->second != "") {
                     this->data[i][it->first] = it->second;
                 } 
             }

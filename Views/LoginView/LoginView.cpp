@@ -37,7 +37,7 @@ void LoginView::login() {
 		if (!isAdmin) ((UserProfileView*)(widgetStack->widget(2)))->setUser(nationalIDInput->text().toStdString());
 
 		this->clearView();
-		widgetStack->setCurrentIndex((isAdmin)? 3 : 2);
+		widgetStack->setCurrentIndex((isAdmin)? ADMIN_DASHBOARD_VIEW_INDEX : USER_PROFILE_VIEW_INDEX);
 	}
 	else {
 		errorLbl->show();
@@ -65,7 +65,7 @@ void LoginView::changeUserType() {
 void LoginView::goToRegister() {
 	this->clearView();
 
-	widgetStack->setCurrentIndex(1);
+	widgetStack->setCurrentIndex(REGISTER_VIEW_INDEX);
 }
 
 

@@ -152,7 +152,7 @@ void UserProfileView::logout()
 {
 	this->user = User();
 
-	this->widgetsStack->setCurrentIndex(0);
+	this->widgetsStack->setCurrentIndex(LOGIN_VIEW_INDEX);
 }
 
 /*********************  Handling    ****************/

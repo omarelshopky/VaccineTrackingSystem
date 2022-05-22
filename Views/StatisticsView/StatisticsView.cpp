@@ -188,7 +188,7 @@ QString StatisticsView::arrangeNumber(int number) {
 
 
 void StatisticsView::previousView() {
-	widgetsStack->setCurrentIndex(3);
+	widgetsStack->setCurrentIndex(ADMIN_DASHBOARD_VIEW_INDEX);
 }
 
 
