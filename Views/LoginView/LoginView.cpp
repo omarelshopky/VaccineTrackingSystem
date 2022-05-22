@@ -34,7 +34,12 @@ void LoginView::login() {
 	}
 
 	if (state) {
-		if (!isAdmin) ((UserProfileView*)(widgetStack->widget(2)))->setUser(nationalIDInput->text().toStdString());
+		if (!isAdmin) {
+			((UserProfileView*)(widgetStack->widget(2)))->setUser(nationalIDInput->text().toStdString());
+		}
+		else {
+			((AdminDashboardView*)(widgetStack->widget(ADMIN_DASHBOARD_VIEW_INDEX)))->updateUserTable();
+		}
 
 		this->clearView();
 		widgetStack->setCurrentIndex((isAdmin)? ADMIN_DASHBOARD_VIEW_INDEX : USER_PROFILE_VIEW_INDEX);

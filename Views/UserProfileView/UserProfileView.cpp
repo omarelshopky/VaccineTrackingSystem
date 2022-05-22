@@ -16,6 +16,7 @@ UserProfileView::UserProfileView(QStackedWidget* widgetsStack, QWidget* parent)
 	connect(saveBtn, &QPushButton::clicked, this, &UserProfileView::saveEdit);
 	connect(isVaccinatedCheck, &QCheckBox::clicked, this, &UserProfileView::toggleIsVaccinatedCheck);
 	connect(togglePassBtn, &QPushButton::clicked, this, &UserProfileView::togglePasswordVisibility);
+	connect(deleteBtn, &QPushButton::clicked, this, &UserProfileView::deleteUser);
 	connect(backBtn, &QPushButton::clicked, this, &UserProfileView::logout);
 }
 
@@ -116,8 +117,7 @@ void UserProfileView::toggleEditMode() {
 	governmentComboBox->setEnabled(!view);
 	governmentComboBox->setStyleSheet(governmentComboBox->styleSheet());
 	isVaccinatedCheck->setEnabled(!view);
-	oneDoseRadioBtn->setEnabled(!view);
-	twoDoseRadioBtn->setEnabled(!view);
+	toggleIsVaccinatedCheck();
 	saveBtn->setEnabled(!view);
 	backBtn->setEnabled(view);
 	togglePassBtn->setEnabled(!view);
@@ -136,8 +136,8 @@ void UserProfileView::toggleEditMode() {
 
 void UserProfileView::saveEdit()
 {
-	User old = user;
 	setUserInformation();
+	User old = user;
 
 	if (handleErrors(userController.edit(user))) {
 		toggleEditMode();
@@ -151,7 +151,6 @@ void UserProfileView::saveEdit()
 void UserProfileView::logout()
 {
 	this->user = User();
-
 	this->widgetsStack->setCurrentIndex(LOGIN_VIEW_INDEX);
 }
 
@@ -230,3 +229,9 @@ void UserProfileView::clearView() {
 }
 
 UserProfileView::~UserProfileView() {}
+
+
+void UserProfileView::deleteUser() {
+	userController.deleteAccount(user);
+	logout();
+}

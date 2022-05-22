@@ -22,12 +22,12 @@ class AdminDashboardView : public QMainWindow, public Ui::AdminDashboardView
 public:
 	AdminDashboardView(QStackedWidget *widgetsStack, QWidget *parent = Q_NULLPTR);
 	~AdminDashboardView();
+	void updateUserTable();
 
 private:
 	void initUserTable();
 	void clearView();
 	bool changeTab(bool isNext);
-	void updateUserTable();
 	void setRowData(int row, User user);
 	void navigate(int pageIndex);
 	void search();

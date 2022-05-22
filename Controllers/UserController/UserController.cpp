@@ -159,8 +159,6 @@ map<string, string> UserController::edit(User user)
 }
 
 
-void UserController::deleteAccount(string nationalID) {
-	User user;
-	user.nationalID = nationalID;
+void UserController::deleteAccount(User user) {
 	user.remove();
 }

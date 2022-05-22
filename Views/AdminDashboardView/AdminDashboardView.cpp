@@ -103,7 +103,7 @@ bool AdminDashboardView::changeTab(bool isNext) {
 
 	if (changed) {
 		usersTable->clearSelection();
-		currentTabLbl->setText(QString::fromStdString(to_string(currentUserTab)));
+		currentTabLbl->setText(QString::fromStdString(to_string(currentUserTab+1)));
 		updateUserTable();
 	}
 	

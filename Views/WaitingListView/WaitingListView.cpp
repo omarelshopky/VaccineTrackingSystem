@@ -103,7 +103,7 @@ bool WaitingListView::changeTab(bool isDose2Table, bool isNext) {
 	}
 
 	if (changed) {
-		((isDose2Table) ? dose2CurrentTabLbl : dose1CurrentTabLbl)->setText(QString::fromStdString(to_string(currentTab[isDose2Table])));
+		((isDose2Table) ? dose2CurrentTabLbl : dose1CurrentTabLbl)->setText(QString::fromStdString(to_string(currentTab[isDose2Table]+1)));
 		updateDoseTable(isDose2Table);
 	}
 

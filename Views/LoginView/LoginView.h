@@ -6,6 +6,7 @@
 #include "ui_LoginView.h"
 #include "../../Controllers/AdminController/AdminController.h"
 #include "../UserProfileView/UserProfileView.h"
+#include "../AdminDashboardView/AdminDashboardView.h"
 
 
 class LoginView : public QMainWindow, public Ui::LoginView

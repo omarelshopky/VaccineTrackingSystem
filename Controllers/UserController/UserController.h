@@ -42,10 +42,7 @@ public:
 	 * @brief Delete specific user account
 	 * @param string nationalID of the user
 	 */
-	void deleteAccount(string nationalID);
-
-
-
+	void deleteAccount(User user);
 
 private:
 	/***	signup	***/ // assistant functions 

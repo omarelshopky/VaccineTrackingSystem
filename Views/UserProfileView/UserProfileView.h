@@ -33,4 +33,5 @@ private:
 	void toggleEditMode();
 	void setUserInformation();
 	void setUserInformation(User);
+	void deleteUser();
 };

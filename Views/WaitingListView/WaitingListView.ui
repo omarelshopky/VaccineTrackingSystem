@@ -370,7 +370,7 @@ background-color:#297EB7;
              </font>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>1</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -769,7 +769,7 @@ background-color:#297EB7;
              </font>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>1</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
