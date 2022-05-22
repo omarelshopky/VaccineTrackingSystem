@@ -51,6 +51,7 @@ void AdminDashboardView::initUserTable() {
 	for (int j = 0; j < 8; j++) {
 		usersTable->setItem(usersCountInTab, j, new QTableWidgetItem());
 	}
+	usersTable->hideRow(usersCountInTab);
 }
 
 
