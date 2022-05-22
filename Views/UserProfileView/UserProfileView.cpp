@@ -1,6 +1,6 @@
 #include "UserProfileView.h"
 
-UserProfileView::UserProfileView(QWidget* parent)
+UserProfileView::UserProfileView(QStackedWidget* widgetsStack, QWidget* parent)
 	: QMainWindow(parent)
 {
 	this->widgetsStack = widgetsStack;
@@ -8,37 +8,34 @@ UserProfileView::UserProfileView(QWidget* parent)
 	setupUi(this);
 
 	// Initialize components prop
+	clearView();
 
-	user = x.display("22222222222222");
-	nationalIdInput->setReadOnly(true);
-	getInformation();
-	View();
 	// Attach signals function
-	connect(EditAndCloseBtn, &QPushButton::clicked, this, &UserProfileView::CloseButton);
-	connect(isVaccinatedCheck, &QCheckBox::clicked, this, &UserProfileView::toggleIsVaccinatedCheck);
+	connect(EditAndCloseBtn, &QPushButton::clicked, this, &UserProfileView::toggleEditMode);
 	connect(countryComboBox, &QComboBox::currentTextChanged, this, &UserProfileView::handleAbroad);
-	connect(saveBtn, &QPushButton::clicked, this, &UserProfileView::SaveButton);
-	connect(ShowPasswordCheck, &QCheckBox::clicked, this, &UserProfileView::ShowPassword);
-	connect(backBtn, &QPushButton::clicked, this, &UserProfileView::LogOutButton);
+	connect(saveBtn, &QPushButton::clicked, this, &UserProfileView::saveEdit);
+	connect(isVaccinatedCheck, &QCheckBox::clicked, this, &UserProfileView::toggleIsVaccinatedCheck);
+	connect(togglePassBtn, &QPushButton::clicked, this, &UserProfileView::togglePasswordVisibility);
+	connect(backBtn, &QPushButton::clicked, this, &UserProfileView::logout);
 }
-void UserProfileView::setUser(User user)  // lma tegy tendh 3la el function de , el parameter beta3ha hyb2a mn function display elly fe UserController
-{
-	this->user = user;
+
+
+void UserProfileView::setUser(string nationalId)  {
+	this->user = userController.display(nationalId);
+	getUserInformation();
 }
 
 /*********************  Information    ****************/
 
-void UserProfileView::setInformation()
+void UserProfileView::setUserInformation()
 {
-	user.fullName = firstNameInput->text().toStdString() + " " + lastNameInput->text().toStdString();
+	user.fullName = fullNameInput->text().toStdString();
 	user.password = passwordInput->text().toStdString();
 	user.isVaccinated = isVaccinatedCheck->isChecked();
-	if (user.isVaccinated)
-	{
+	if (user.isVaccinated) {
 		user.dosesNumber = (oneDoseRadioBtn->isChecked() ? 1 : 2);
 	}
-	else
-	{
+	else {
 		user.dosesNumber = 0;
 	}
 	user.country = (countryComboBox->currentIndex() == 0 ? "Egypt" : "Abroad");
@@ -47,8 +44,8 @@ void UserProfileView::setInformation()
 	user.gender = (genderComboBox->currentIndex() == 0 ? "Male" : "Female");
 }
 
-void UserProfileView::setInformation(User oldUser)
-{
+
+void UserProfileView::setUserInformation(User oldUser) {
 	user.fullName = oldUser.fullName;
 	user.password = oldUser.password;
 	user.isVaccinated = oldUser.isVaccinated;
@@ -59,160 +56,109 @@ void UserProfileView::setInformation(User oldUser)
 	user.government = oldUser.government;
 }
 
-void UserProfileView::getInformation()
+
+void UserProfileView::getUserInformation()
 {
-	string firstName = "", secondName = "";
-	bool First = true;
-	for (int i = 0; i < user.fullName.size(); i++)
-	{
-		if (user.fullName[i] == ' ')
-		{
-			First = false;
-		}
-		else
-		{
-			if (First)
-			{
-				firstName += user.fullName[i];
-			}
-			else
-			{
-				secondName += user.fullName[i];
-			}
-		}
-	}
-	firstNameInput->setText(firstName.c_str());
-	lastNameInput->setText(secondName.c_str());
+	fullNameInput->setText(user.fullName.c_str());
 	nationalIdInput->setText(user.nationalID.c_str());
 	passwordInput->setText(user.password.c_str());
-	isVaccinatedCheck->setChecked((user.isVaccinated));
+	genderComboBox->setCurrentIndex((user.gender == "Male") ? 0 : 1);
+	ageSpinBox->setValue(user.age);
+	isVaccinatedCheck->setChecked(user.isVaccinated);
+
 	if (isVaccinatedCheck->isChecked())
 	{
 		if (user.dosesNumber==1)
-		{
 			oneDoseRadioBtn->setChecked(true);
-			twoDoseRadioBtn->setChecked(false);
-		}
 		else
-		{
-			oneDoseRadioBtn->setChecked(false);
 			twoDoseRadioBtn->setChecked(true);
+	}
 
-		}
-	}
-	toggleIsVaccinatedCheck();
-	if (user.gender=="Male")
+	handleAbroad(user.country.c_str());
+	if (user.country == "Egypt")
 	{
-		genderComboBox->setCurrentIndex(0);
-	}
-	else
-	{
-		genderComboBox->setCurrentIndex(1);
-	}
-	ageSpinBox->setValue(user.age);
-	int indx=0;
-	for (int i = 0; i < sizeof(governments); i++)
-	{
-		if (user.government==governments[i])
-		{
-			indx = i;
-			break;
-		}
-	}
-	if (user.country=="Egypt")
-	{
-		handleAbroad("Egypt");
 		countryComboBox->setCurrentIndex(0);
+
+		int indx = 0;
+		for (int i = 0; i < sizeof(governments); i++)
+		{
+			if (user.government == governments[i])
+			{
+				indx = i;
+				break;
+			}
+		}
+
 		governmentComboBox->setCurrentIndex(indx);
 	}
 	else
 	{
-		handleAbroad("Abroad");
 		countryComboBox->setCurrentIndex(1);
 	}
-	fullNameError->hide();
-	passwordError->hide();
 }
+
 
 /*********************  Edit and View    ****************/
 
-void UserProfileView::Edit()
-{
-	view = false;
-	EditAndCloseBtn->setText("Close");
-	firstNameInput->setReadOnly(false);
-	lastNameInput->setReadOnly(false);
-	passwordInput->setReadOnly(false);
-	ageSpinBox->setReadOnly(false);
-	genderComboBox->setEnabled(true);
-	countryComboBox->setEnabled(true);
-	governmentComboBox->setEnabled(true);
-	isVaccinatedCheck->setEnabled(true);
-	oneDoseRadioBtn->setEnabled(true);
-	twoDoseRadioBtn->setEnabled(true);
-	saveBtn->setEnabled(true);
-	backBtn->setEnabled(false);
-	toggleIsVaccinatedCheck();
+void UserProfileView::toggleEditMode() {
+	view = !view;
+
+	fullNameInput->setEnabled(!view);
+	fullNameInput->setStyleSheet(fullNameInput->styleSheet());
+	passwordInput->setEnabled(!view);
+	passwordInput->setStyleSheet(passwordInput->styleSheet());
+	ageSpinBox->setEnabled(!view);
+	ageSpinBox->setStyleSheet(ageSpinBox->styleSheet());
+	genderComboBox->setEnabled(!view);
+	genderComboBox->setStyleSheet(genderComboBox->styleSheet());
+	countryComboBox->setEnabled(!view);
+	countryComboBox->setStyleSheet(countryComboBox->styleSheet());
+	governmentComboBox->setEnabled(!view);
+	governmentComboBox->setStyleSheet(governmentComboBox->styleSheet());
+	isVaccinatedCheck->setEnabled(!view);
+	oneDoseRadioBtn->setEnabled(!view);
+	twoDoseRadioBtn->setEnabled(!view);
+	saveBtn->setEnabled(!view);
+	backBtn->setEnabled(view);
+	togglePassBtn->setEnabled(!view);
+	
+	if (view) {
+		EditAndCloseBtn->setText("Edit");
+		getUserInformation();
+	}
+	else {
+		EditAndCloseBtn->setText("Close");
+	}
 }
 
-void UserProfileView::View()
-{
-	getInformation();
-	view = true;
-	EditAndCloseBtn->setText("Edit");
-	firstNameInput->setReadOnly(true);
-	lastNameInput->setReadOnly(true);
-	passwordInput->setReadOnly(true);
-	ageSpinBox->setReadOnly(true);
-	genderComboBox->setEnabled(false);
-	countryComboBox->setEnabled(false);
-	governmentComboBox->setEnabled(false);
-	isVaccinatedCheck->setEnabled(false);
-	oneDoseRadioBtn->setEnabled(false);
-	twoDoseRadioBtn->setEnabled(false);
-	saveBtn->setEnabled(false);
-	backBtn->setEnabled(true);
-}
 
 /*********************  Buttons    ****************/
 
-void UserProfileView::CloseButton()
-{
-	if (view)
-	{
-		Edit();
-	}
-	else
-	{
-		View();
-	}
-}
-
-void UserProfileView::SaveButton()
+void UserProfileView::saveEdit()
 {
 	User old = user;
-	setInformation();
-	bool valid = handleErrors(x.edit(user));
-	if (valid)
-	{
-		View();
+	setUserInformation();
+
+	if (handleErrors(userController.edit(user))) {
+		toggleEditMode();
 	}
-	else
-	{
-		setInformation(old);
+	else { // Return user data after edition
+		setUserInformation(old);
 	}
 }
 
-void UserProfileView::LogOutButton()
+
+void UserProfileView::logout()
 {
-	cout << "Log Out" << endl;
+	this->user = User();
+
+	this->widgetsStack->setCurrentIndex(0);
 }
 
 /*********************  Handling    ****************/
 
 bool UserProfileView::handleErrors(map<string, string> state) {
 	bool valid = true;
-
 
 	if (state["fullName"] != "") {
 		fullNameError->setText(QString::fromStdString(state["fullName"]));
@@ -247,6 +193,7 @@ void UserProfileView::handleAbroad(QString country) {
 	}
 }
 
+
 void UserProfileView::initGovComboBox() {
 	governmentComboBox->clear();
 
@@ -255,32 +202,31 @@ void UserProfileView::initGovComboBox() {
 	}
 }
 
+
 void UserProfileView::toggleIsVaccinatedCheck()
 {
-	if (isVaccinatedCheck->isChecked())
-	{
-		oneDoseRadioBtn->setEnabled(true);
-		twoDoseRadioBtn->setEnabled(true);
-	}
-	else
-	{
-		oneDoseRadioBtn->setEnabled(false);
-		twoDoseRadioBtn->setEnabled(false);
-	}
+	oneDoseRadioBtn->setEnabled(isVaccinatedCheck->isChecked());
+	twoDoseRadioBtn->setEnabled(isVaccinatedCheck->isChecked());
 }
 
-void UserProfileView::ShowPassword()
+
+void UserProfileView::togglePasswordVisibility()
 {
-	if (ShowPasswordCheck->isChecked())
-	{
+	if (togglePassBtn->isChecked()) {
 		passwordInput->setEchoMode(QLineEdit::Normal);
 	}
-	else
-	{
+	else {
 		passwordInput->setEchoMode(QLineEdit::Password);
 	}
 }
 
-UserProfileView::~UserProfileView()
-{
+
+void UserProfileView::clearView() {
+	view = false;
+	togglePassBtn->setChecked(false);
+	toggleEditMode();
+	fullNameError->hide();
+	passwordError->hide();
 }
+
+UserProfileView::~UserProfileView() {}

@@ -5,8 +5,7 @@
 #include <qvalidator.h>
 #include "ui_LoginView.h"
 #include "../../Controllers/AdminController/AdminController.h"
-#include "../../Controllers/UserController/UserController.h"
-
+#include "../UserProfileView/UserProfileView.h"
 
 
 class LoginView : public QMainWindow, public Ui::LoginView
@@ -27,4 +26,5 @@ private:
 	void changeUserType();
 	void goToRegister();
 	void clearView();
+	void togglePasswordVisibility();
 };

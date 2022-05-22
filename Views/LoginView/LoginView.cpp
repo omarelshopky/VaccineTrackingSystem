@@ -2,8 +2,6 @@
 #include "ui_LoginView.h"
 
 
-
-
 LoginView::LoginView(QStackedWidget *widgetStack, QWidget* parent)
 	: QMainWindow(parent)
 {
@@ -19,6 +17,7 @@ LoginView::LoginView(QStackedWidget *widgetStack, QWidget* parent)
     connect(loginBtn, &QPushButton::clicked, this, &LoginView::login);
 	connect(userTypeBtn, &QPushButton::clicked, this, &LoginView::changeUserType);
 	connect(registerBtn, &QPushButton::clicked, this, &LoginView::goToRegister);
+	connect(togglePassBtn, &QPushButton::clicked, this, &LoginView::togglePasswordVisibility);
 }
 
 
@@ -35,6 +34,8 @@ void LoginView::login() {
 	}
 
 	if (state) {
+		if (!isAdmin) ((UserProfileView*)(widgetStack->widget(2)))->setUser(nationalIDInput->text().toStdString());
+
 		this->clearView();
 		widgetStack->setCurrentIndex((isAdmin)? 3 : 2);
 	}
@@ -72,4 +73,17 @@ void LoginView::clearView() {
 	nationalIDInput->clear();
 	passInput->clear();
 	errorLbl->hide();
+	togglePassBtn->setChecked(false);
+	togglePasswordVisibility();
+}
+
+
+void LoginView::togglePasswordVisibility()
+{
+	if (togglePassBtn->isChecked()) {
+		passInput->setEchoMode(QLineEdit::Normal);
+	}
+	else {
+		passInput->setEchoMode(QLineEdit::Password);
+	}
 }

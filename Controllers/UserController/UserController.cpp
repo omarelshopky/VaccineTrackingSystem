@@ -26,6 +26,9 @@ bool UserController::checkFullname(string fullName)
 				break;
 			}
 		}
+
+		if (isValid == false)
+			break;
 	}
 
 	// User doesn't entered First and Last name at lest
@@ -129,6 +132,30 @@ map<string, string> UserController::signup(string fullName, string nationalID, s
 
 bool UserController::login(string nationalID, string password) {
 	return User::select({ { "NationalID", "=", nationalID }, {"Password", "=", password} }).size();
+}
+
+
+User UserController::display(string nationalId)
+{
+	return User::select({ {"NationalID", "=", nationalId} })[0];
+}
+
+
+map<string, string> UserController::edit(User user)
+{
+	map<string, string> state = { {"fullName", ""}, {"password", ""} };
+
+	if (!checkFullname(user.fullName))
+		"The Name must be just English letters other characters is not allowed";
+	
+	if (checkPassword(user.password))
+		"The password must be at least 8 characters";
+
+	if (state["fullName"] == "" && state["password"] == "") {
+		user.update();
+	}
+
+	return state;
 }
 
 

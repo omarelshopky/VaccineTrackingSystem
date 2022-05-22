@@ -22,9 +22,20 @@ public:
 	bool login(string nationalID, string password);
 
 
-	/***	Zeyad	***/ // UserProfileView
-	User display();
-	void edit();
+	/**
+	 * @brief Gets a user informatino from database with specific national ID
+	 * @param string nationalID of the user
+	 * @return User corresponding to this national ID
+	 */
+	User display(string nationalId);
+
+
+	/**
+	 * @brief Edit the user information
+	 * @param The User to edit his information
+	 * @return a map include the state of the edit
+	 */
+	map<string, string> edit(User);
 
 
 	/**

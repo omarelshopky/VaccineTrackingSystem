@@ -1,37 +1,36 @@
 #pragma once
 
-#include <QStackedWidget>
-#include <qlineedit.h>
 #include <QMainWindow>
+#include <QStackedWidget>
 #include "ui_UserProfileView.h"
-#include <iostream>
 #include"../../Controllers/UserController/UserController.h"
-#include "../../Config.h"
+
 
 class UserProfileView : public QMainWindow, public Ui::UserProfileView
 {
 	Q_OBJECT
-		UserController userController;
+
 	QStackedWidget* widgetsStack;
+	UserController userController;
 	User user;
-	bool view = true;
-	UserController x;
+	bool view = false;
+
 public:
-	UserProfileView(QWidget *parent = Q_NULLPTR);
+	UserProfileView(QStackedWidget *widgetsStack, QWidget *parent = Q_NULLPTR);
 	~UserProfileView();
-	void setUser(User);
+	void setUser(string nationalId);
+
 private:
-	void toggleIsVaccinatedCheck();
-	bool handleErrors(map<string, string> state);
-	void handleAbroad(QString country);
 	void initGovComboBox();
-	void CloseButton();
-	void Edit();
-	void View();
-	void SaveButton();
-	void getInformation();
-	void setInformation();
-	void setInformation(User);
-	void ShowPassword();
-	void LogOutButton();
+	void getUserInformation();
+	void toggleIsVaccinatedCheck();
+	void togglePasswordVisibility();
+	void handleAbroad(QString country);
+	bool handleErrors(map<string, string> state);
+	void clearView();
+	void logout();
+	void saveEdit();
+	void toggleEditMode();
+	void setUserInformation();
+	void setUserInformation(User);
 };
