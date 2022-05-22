@@ -10,7 +10,7 @@
 class FileHandler
 {
 	string filePath;
-	vector<map<string, string>> data;
+	unordered_map<string, map<string, string>> data;
 
 public:
 	string primaryKey;
@@ -76,9 +76,9 @@ private:
 
 	/**
 	 * @brief Read the file records to a vector of maps
-	 * @return vector<map<string, string>> recoreds from the file
+	 * @return unordered_map<string, map<string, string>> recoreds from the file
 	 */
-	vector<map<string, string>> readData();
+	unordered_map<string, map<string, string>> readData();
 
 
 	/**
@@ -98,10 +98,9 @@ private:
 
 
 	/**
-	 * @brief Save vector records to the its file
-	 * @param vector<map<string, string>> records want to be saved to the file
+	 * @brief Save the data hash table to its file
 	 */
-	void saveData(vector<map<string, string>> records);
+	void saveData();
 
 
 	/**
@@ -111,5 +110,12 @@ private:
 	 * @return bool evaluation resault (true -> success, false -> fail)
 	 */
 	bool checkCondition(map<string, string> record, condition condition);
+
+
+	/**
+	 * @brief Convert the data from hash table sturcture to vector
+	 * @return vector<map<string, string>> contains the data
+	 */
+	vector<map<string, string>> convertDataToVector();
 };
 

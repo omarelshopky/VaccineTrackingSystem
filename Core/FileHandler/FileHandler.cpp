@@ -48,7 +48,7 @@ bool FileHandler::insert(map<string, string> data) {
 
         // Append the record to the file
         this->appendLine(record);
-        this->data.push_back(data);
+        this->data[data[primaryKey]] = data;
 
         return true;
     }
@@ -72,8 +72,8 @@ vector<string> FileHandler::splitRecord(string recordLine) {
 }
 
 
-vector<map<string, string>> FileHandler::readData() {
-    vector<map<string, string>> records;
+unordered_map<string, map<string, string>> FileHandler::readData() {
+    unordered_map<string, map<string, string>> records;
     string recordLine;
     ifstream file;
 
@@ -87,18 +87,19 @@ vector<map<string, string>> FileHandler::readData() {
     while (file) {
         getline(file, recordLine); // Read line from the file
 
-        vector<string> attributes = this->splitRecord(recordLine); // extract attribues from the line
+        if (recordLine != "") {
+            vector<string> attributes = this->splitRecord(recordLine); // extract attribues from the line
 
-        // Convert the record to map
-        map<string, string> record;
+            // Convert the record to map
+            map<string, string> record;
 
-        for (int i = 0; i < attributes.size(); i++) {
-            record[this->headers[i]] = attributes[i];
+            for (int i = 0; i < attributes.size(); i++) {
+                record[this->headers[i]] = attributes[i];
+            }
+
+            records[record[primaryKey]] = record;
         }
-
-        records.push_back(record);
     }
-    records.pop_back(); // Remove the last empty line
     file.close();
 
     return records;
@@ -109,20 +110,25 @@ vector<map<string, string>> FileHandler::select(vector<condition> conditions = {
     vector<map<string, string>> retrivedRecords;
     
     if (conditions.size() == 0) // Select * (all) records
-        return data;
+        return convertDataToVector();
 
-    for (int i = 0; i < data.size(); i++) {
+    if (conditions.size() == 1 && conditions[0].key == primaryKey && conditions[0].comparison == "=") {
+        if (data[conditions[0].value][primaryKey] != "") return { data[conditions[0].value] };
+        else return {};
+    }
+
+    for (auto record : data) {
         bool valid = true;
 
         for (int j = 0; j < conditions.size(); j++) {
-            if (!this->checkCondition(data[i], conditions[j])) {
+            if (!this->checkCondition(record.second, conditions[j])) {
                 valid = false;
                 break;
             }
         }
 
         if (valid) {
-            retrivedRecords.push_back(data[i]);
+            retrivedRecords.push_back(record.second);
         }
     }
 
@@ -138,12 +144,26 @@ bool FileHandler::isUnique(string value) {
 int FileHandler::update(map<string, string> data, vector<condition> conditions) {
     int affectedRecords = 0;
 
-    for (int i = 0; i < this->data.size(); i++) {
+    /*if (conditions.size() == 1 && conditions[0].key == primaryKey && conditions[0].comparison == "=") {
+        if (this->data[conditions[0].value][primaryKey] != "") {
+            for (map<string, string>::iterator it = data.begin(); it != data.end(); ++it) {
+                if ((it->first != this->primaryKey || (it->first == this->primaryKey && this->isUnique(it->second))) && it->second != "") {
+                    this->data[conditions[0].value][it->first] = it->second;
+                }
+            }
+
+            this->saveData();
+            return 1;
+        }
+    }*/
+
+
+    for (auto record : this->data) {
         bool valid = true;
 
         // Evaluate all conditions
         for (int j = 0; j < conditions.size(); j++) {
-            if (!this->checkCondition(this->data[i], conditions[j])) {
+            if (!this->checkCondition(record.second, conditions[j])) {
                 valid = false;
                 break;
             }
@@ -153,7 +173,7 @@ int FileHandler::update(map<string, string> data, vector<condition> conditions) 
         if (valid) {
             for (map<string, string>::iterator it = data.begin(); it != data.end(); ++it) {
                 if ((it->first != this->primaryKey || (it->first == this->primaryKey && this->isUnique(it->second))) && it->second != "") {
-                    this->data[i][it->first] = it->second;
+                    record.second[it->first] = it->second;
                 } 
             }
 
@@ -161,28 +181,28 @@ int FileHandler::update(map<string, string> data, vector<condition> conditions) 
         }
     }
     
-    this->saveData(this->data);
+    this->saveData();
 
     return affectedRecords;
 }
 
 
-void FileHandler::saveData(vector<map<string, string>> records) {
+void FileHandler::saveData() {
     this->initDB(); // Clear the file
 
     ofstream file;
 
     file.open(this->filePath, ios::app);
 
-    for (int i = 0; i < records.size(); i++) {
+    for (auto record : data) {
         // Arrange the record as a one line string
-        string record = records[i][this->headers[0]];
+        string lineRecord = record.second[this->headers[0]];
 
         for (int j = 1; j < this->headers.size(); j++) {
-            record += RECORD_SPLITER + records[i][this->headers[j]];
+            lineRecord += RECORD_SPLITER + record.second[this->headers[j]];
         }
 
-        file << record << "\n";
+        file << lineRecord << "\n";
     }
 
     file.close();
@@ -221,15 +241,19 @@ bool FileHandler::checkCondition(map<string, string> record, condition condition
 
 int FileHandler::remove(vector<condition> conditions) {
     int affectedRecords = 0;
-    vector<map<string, string>> records(data);
-    vector<map<string, string>> remainRecords;
 
-    for (int i = 0; i < records.size(); i++) {
+    if (conditions.size() == 1 && conditions[0].key == primaryKey && conditions[0].comparison == "=") {
+        data.erase(conditions[0].value);
+        this->saveData();
+        return 1;
+    }
+
+    for (auto record : data) {
         bool valid = true;
 
         // Evaluate all conditions
         for (int j = 0; j < conditions.size(); j++) {
-            if (!this->checkCondition(records[i], conditions[j])) {
+            if (!this->checkCondition(record.second, conditions[j])) {
                 valid = false;
                 break;
             }
@@ -237,15 +261,23 @@ int FileHandler::remove(vector<condition> conditions) {
 
         // Update when the record is valid
         if (valid) {
+            data.erase(record.first);
             affectedRecords++;
-        }
-        else {
-            remainRecords.push_back(records[i]);
         }
     }
 
-    data = remainRecords;
-    this->saveData(remainRecords);
+    this->saveData();
 
     return affectedRecords;
+}
+
+
+vector<map<string, string>> FileHandler::convertDataToVector() {
+    vector<map<string, string>> records;
+
+    for (auto record : data) {
+        records.push_back(record.second);
+    }
+
+    return records;
 }
