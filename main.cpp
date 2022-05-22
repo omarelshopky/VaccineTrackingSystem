@@ -17,12 +17,12 @@ void enableConsole();
 
 int main(int argc, char *argv[])
 {
-    if (mode == "development") enableConsole();
-    
-    QApplication a(argc, argv);
-    WidgetsStack w;
-    w.show();
-    return a.exec();
+    if (mode == "production") enableConsole();
+
+    QApplication app(argc, argv);
+    WidgetsStack widgetsStack;
+    widgetsStack.show();
+    return app.exec();
 }
 
 

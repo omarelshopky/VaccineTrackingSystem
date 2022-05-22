@@ -146,10 +146,10 @@ map<string, string> UserController::edit(User user)
 	map<string, string> state = { {"fullName", ""}, {"password", ""} };
 
 	if (!checkFullname(user.fullName))
-		"The Name must be just English letters other characters is not allowed";
+		state["fullName"] = "Please Enter Valid Name!";
 	
-	if (checkPassword(user.password))
-		"The password must be at least 8 characters";
+	if (!checkPassword(user.password))
+		state["password"] = "Please Enter Valid Password, 8-20 Digits!";
 
 	if (state["fullName"] == "" && state["password"] == "") {
 		user.update();
