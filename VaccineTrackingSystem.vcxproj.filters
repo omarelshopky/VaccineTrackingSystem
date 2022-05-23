@@ -63,6 +63,12 @@
     <Filter Include="Core\Model">
       <UniqueIdentifier>{f96a48c1-e805-4337-8f92-8ef72e78636d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Queue">
+      <UniqueIdentifier>{3d01b25d-8d6c-4638-a486-7e82ecd31852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Vector">
+      <UniqueIdentifier>{c331b3a2-6998-4964-ba46-a01001149a98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -109,6 +115,12 @@
     </ClCompile>
     <ClCompile Include="Core\Model\Model.cpp">
       <Filter>Core\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Vector\vector.cpp">
+      <Filter>Core\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Queue\Queue.cpp">
+      <Filter>Core\Queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="Core\Model\Model.h">
       <Filter>Core\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Vector\vector.h">
+      <Filter>Core\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Queue\Queue.h">
+      <Filter>Core\Queue</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
