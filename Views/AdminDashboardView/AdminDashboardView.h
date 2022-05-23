@@ -18,6 +18,8 @@ class AdminDashboardView : public QMainWindow, public Ui::AdminDashboardView
 	int currentUserTab = 0;
 	bool isSearching = false;
 	int currentUsersShown = 0;
+	vector<User> users;
+	bool isDeprecated = true;
 
 public:
 	AdminDashboardView(QStackedWidget *widgetsStack, QWidget *parent = Q_NULLPTR);

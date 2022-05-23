@@ -9,8 +9,8 @@ AdminDashboardView::AdminDashboardView(QStackedWidget *widgetsStack, QWidget *pa
 
 	// Initialize components prop
 	nationalIdInput->setValidator(new QDoubleValidator(0, 100, 2, this)); //nationalId accept only numbers
-	initUserTable();
 	clearView();
+	initUserTable();
 
 	// Attach signals function
 	connect(statBtn, &QPushButton::clicked, this, [this] { navigate(STATISTICS_VIEW_INDEX); });
@@ -29,7 +29,11 @@ AdminDashboardView::~AdminDashboardView() {}
 
 
 void AdminDashboardView::initUserTable() {
-	vector<User> users = adminController.viewUsers();
+	if (isDeprecated) {
+		users = adminController.viewUsers();
+		isDeprecated = false;
+	}
+
 	int allUsersCount = users.size();
 
 	for (int i = 0; i < usersCountInTab; i++) {
@@ -56,8 +60,12 @@ void AdminDashboardView::initUserTable() {
 
 
 void AdminDashboardView::updateUserTable() {
-	int allUsersCount = adminController.viewUsers().size();
-	vector<User> users = User::select();
+	if (isDeprecated) {
+		users = adminController.viewUsers();
+		isDeprecated = false;
+	}
+
+	int allUsersCount = users.size();
 
 	for (int i = 0; i < usersCountInTab; i++) {
 		long long index = i + (long long)currentUserTab * usersCountInTab;
@@ -73,7 +81,12 @@ void AdminDashboardView::updateUserTable() {
 
 
 bool AdminDashboardView::changeTab(bool isNext) {
-	int allUsersCount = adminController.viewUsers().size();
+	if (isDeprecated) {
+		users = adminController.viewUsers();
+		isDeprecated = false;
+	}
+
+	int allUsersCount = users.size();
 	bool changed = false;
 
 	if (isNext) {
@@ -136,6 +149,7 @@ void AdminDashboardView::navigate(int pageIndex) {
 		break;
 	}
 
+	clearView();
 	widgetsStack->setCurrentIndex(pageIndex);
 }
 
@@ -188,6 +202,7 @@ void AdminDashboardView::deleteUsers() {
 		usersTable->clearSelection();
 	}
 	
+	isDeprecated = true;
 	updateUserTable();
 	deleteMsg->show();
 }
@@ -200,7 +215,8 @@ void AdminDashboardView::logout() {
 
 
 void AdminDashboardView::clearView() {
-	currentUserTab = 0;
+	isDeprecated = true;
+	while (changeTab(0));
 	nationalIdInput->clear();
 	nationalIdError->hide();
 	deleteMsg->hide();

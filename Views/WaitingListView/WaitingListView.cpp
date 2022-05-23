@@ -152,10 +152,14 @@ void WaitingListView::finishUserDose(bool isDose2Table) {
 void WaitingListView::goBack() {
 	clearView();
 	widgetsStack->setCurrentIndex(ADMIN_DASHBOARD_VIEW_INDEX);
+	((AdminDashboardView*)(widgetsStack->widget(ADMIN_DASHBOARD_VIEW_INDEX)))->updateUserTable();
 }
 
 
 void WaitingListView::clearView() {
+	while (changeTab(0, 0));
+	while (changeTab(1, 0));
+
 	// Clear queue data
 	for (int i = 0; i < 2; i++) {
 		queue<User> empty;

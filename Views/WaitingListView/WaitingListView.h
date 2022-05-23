@@ -4,6 +4,7 @@
 #include <QStackedWidget>
 #include "ui_WaitingListView.h"
 #include "../../Controllers/AdminController/AdminController.h"
+#include "../AdminDashboardView/AdminDashboardView.h"
 
 
 class WaitingListView : public QMainWindow, public Ui::WaitingListView
